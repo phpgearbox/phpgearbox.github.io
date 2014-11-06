@@ -1,0 +1,12 @@
+{
+    "require": {
+    	"codegyre/robo": "*",
+        "gears/doc": "*",
+        "gears/arrays": "*",
+        "gears/string": "*",
+        "gears/di": "*",
+        "gears/router": "*",
+        "gears/session": "*",
+        "gears/view": "*"
+    }
+}

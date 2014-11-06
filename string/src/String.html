@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			string/src/String.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: $value
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="28"
+								data-end-line="32"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">private $value;</code></pre>
+										
+<p>This stores the actual string that this object represents.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __construct
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="35"
+								data-end-line="47"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __construct($string)</code></pre>
+										
+<p>Creates a new Gears\String object.</p>
+<h2>Parameters:</h2>
+<p>$string - A PHP string to turn into a Gears\String object.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: s
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="53"
+								data-end-line="68"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function s($string)</code></pre>
+										
+<p>This provides a static constructor or factory method.
+So you can do things like this:</p>
+<p>Gears\String::s('hello world')->contains('world');</p>
+<h2>Parameters:</h2>
+<p>$string - A PHP string to turn into a Gears\String object.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __toString
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="74"
+								data-end-line="86"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __toString()</code></pre>
+										
+<p>Magic method to turn Gears\String back into a normal string.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetExists
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="98"
+								data-end-line="110"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetExists($index)</code></pre>
+										
+<p>ArrayAccess method, checks to see if the key actually exists.</p>
+<h2>Parameters:</h2>
+<p>$index - The integer of the index to check.</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetGet
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="116"
+								data-end-line="128"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetGet($index)</code></pre>
+										
+<p>ArrayAccess method, retrieves an array value.</p>
+<h2>Parameters:</h2>
+<p>$index - The integer of the index to get.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetSet
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="134"
+								data-end-line="147"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetSet($index, $val)</code></pre>
+										
+<p>ArrayAccess method, sets an array value.</p>
+<h2>Parameters:</h2>
+<p>$index - The integer of the index to set.
+$val - The new value for the index.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetUnset
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="172"
+								data-end-line="184"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetUnset($index)</code></pre>
+										
+<p>ArrayAccess method, removes an array value.</p>
+<h2>Parameters:</h2>
+<p>$index - The integer of the index to delete.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: convertToSelf
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="193"
+								data-end-line="208"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">private function convertToSelf($input)</code></pre>
+										
+<p>The idea behind this is to provide a fluent interface.
+So that multiple calls can be chained together.</p>
+<h2>Parameters:</h2>
+<p>$input - The input data. This will either be a string,
+an array of strings or possibly some other value like a boolean,
+in the case something failed.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __call
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="250"
+								data-end-line="264"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __call($name, $arguments)</code></pre>
+										
+<p>This is what creates the fluent api. This class is just a fancy
+container and has no real functionality at all.</p>
+<h2>Parameters:</h2>
+<p>$name - The name of the \Gears\String\"FUNCTION" to call.
+$arguments - The arguments to pass to the function.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __callStatic
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="293"
+								data-end-line="319"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function __callStatic($name, $arguments)</code></pre>
+										
+<p>This provides a static API. As of PHP 5.5 we can't import functions from
+different name spaces. In PHP 5.6 we can. So this is the next best thing.</p>
+<p>For example compare this:</p>
+<p>\Gears\String\contains('hello world', 'world');</p>
+<p>To this:</p>
+<p>use Gears\String as Str;
+Str::contains('hello world', 'world');</p>
+<p>NOTE: Static calls like this will return the exact output from the
+underlying function. So you can't do method chaining, etc.</p>
+<h2>Parameters:</h2>
+<p>$name - The name of the \Gears\String\"FUNCTION" to call.
+$arguments - The arguments to pass to the function.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Property: $value
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Method: __construct
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Method: s
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Method: __toString
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Method: offsetExists
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Method: offsetGet
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Method: offsetSet
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Method: offsetUnset
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Method: convertToSelf
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Method: __call
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Method: __callStatic
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						string/src/String.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use \Illuminate\Support\Traits\MacroableTrait;
+
+class String implements \ArrayAccess
+{
+	/*
+	 * Make this compatiable with the Laravel Str class.
+	 * That way we can easily swap in our version into a Laravel alias list.
+	 */
+	use MacroableTrait
+	{
+		__callStatic as __macroCallStatic;
+		__call as __macroCall;
+	}
+
+	/**
+	 * Property: $value
+	 * =========================================================================
+	 * This stores the actual string that this object represents.
+	 */
+	private $value;
+	
+	/**
+	 * Method: __construct
+	 * =========================================================================
+	 * Creates a new Gears\String object.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $string - A PHP string to turn into a Gears\String object.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function __construct($string)
+	{
+		$this-&gt;value = (string)$string;
+	}
+
+	/**
+	 * Method: s
+	 * =========================================================================
+	 * This provides a static constructor or factory method.
+	 * So you can do things like this:
+	 * 
+	 *     Gears\String::s(&#039;hello world&#039;)-&gt;contains(&#039;world&#039;);
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $string - A PHP string to turn into a Gears\String object.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public static function s($string)
+	{
+		return new self($string);
+	}
+	
+	/**
+	 * Method: __toString
+	 * =========================================================================
+	 * Magic method to turn Gears\String back into a normal string.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * string
+	 */
+	public function __toString()
+	{
+		return $this-&gt;value;
+	}
+	
+	// Alias for above
+	public function toString()
+	{
+		return $this-&gt;__toString();
+	}
+	
+	/**
+	 * Method: offsetExists
+	 * =========================================================================
+	 * ArrayAccess method, checks to see if the key actually exists.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $index - The integer of the index to check.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * boolean
+	 */
+	public function offsetExists($index)
+	{
+		return !empty($this-&gt;value[$index]);
+	}
+	
+	/**
+	 * Method: offsetGet
+	 * =========================================================================
+	 * ArrayAccess method, retrieves an array value.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $index - The integer of the index to get.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * string
+	 */
+	public function offsetGet($index)
+	{
+		return \Gears\String\charAt($this-&gt;value, $index);
+	}
+	
+	/**
+	 * Method: offsetSet
+	 * =========================================================================
+	 * ArrayAccess method, sets an array value.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $index - The integer of the index to set.
+	 * $val - The new value for the index.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function offsetSet($index, $val)
+	{
+		// Work out the start of the string
+		if ($index == 0)
+		{
+			$start = &#039;&#039;;
+		}
+		else
+		{
+			$start = \Gears\String\slice($this-&gt;value, 0, $index);
+		}
+		
+		// Work out the end of the string
+		$end = \Gears\String\slice
+		(
+			$this-&gt;value,
+			$index+1,
+			\Gears\String\length($this-&gt;value)
+		);
+		
+		// Recombine them with a new middle
+		$this-&gt;value = $start.$val.$end;
+	}
+	
+	/**
+	 * Method: offsetUnset
+	 * =========================================================================
+	 * ArrayAccess method, removes an array value.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $index - The integer of the index to delete.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function offsetUnset($index)
+	{
+		$this-&gt;value =
+			\Gears\String\slice($this-&gt;value, 0, $index).
+			\Gears\String\slice($this-&gt;value, $index+1)
+		;
+	}
+	
+	/**
+	 * Method: convertToSelf
+	 * =========================================================================
+	 * The idea behind this is to provide a fluent interface.
+	 * So that multiple calls can be chained together.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $input - The input data. This will either be a string,
+	 * an array of strings or possibly some other value like a boolean,
+	 * in the case something failed.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	private function convertToSelf($input)
+	{
+		if (is_string($input))
+		{
+			// It&#039;s just a single string so create a new instance.
+			$output = new self($input);
+		}
+		elseif (is_array($input))
+		{
+			// Create our output array
+			$output = [];
+			
+			// Loop over the input array
+			foreach ($input as $string)
+			{
+				if (is_string($string))
+				{
+					// Add a new string
+					$output[] = new self($string);
+				}
+				elseif (is_array($string))
+				{
+					// Recurse into the array
+					$output[] = $this-&gt;convertToSelf($string);
+				}
+				else
+				{
+					// We don&#039;t know what it is do do nothing to it
+					$output[] = $string;
+				}
+			}
+		}
+		else
+		{
+			// We don&#039;t know what it is do do nothing to it
+			$output = $input;
+		}
+
+		return $output;
+	}
+	
+	/**
+	 * Method: __call
+	 * =========================================================================
+	 * This is what creates the fluent api. This class is just a fancy
+	 * container and has no real functionality at all.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name of the \Gears\String\&quot;FUNCTION&quot; to call.
+	 * $arguments - The arguments to pass to the function.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function __call($name, $arguments)
+	{
+		// Create the function name
+		$func_name = &#039;\Gears\String\\&#039;.$name;
+
+		// Does the function exist
+		if (!function_exists($func_name))
+		{
+			// Try a macro
+			if (self::hasMacro($name))
+			{
+				return self::__macroCall($name, $arguments);
+			}
+
+			// Bail out, we don&#039;t have a function to run
+			throw new \Exception(&#039;Gears String function does not exist!&#039;);
+		}
+
+		// Prepend the current string value to the arguments
+		array_unshift($arguments, $this-&gt;value);
+
+		// Call the function
+		$result = call_user_func_array($func_name, $arguments);
+
+		// Return our selves.
+		return $this-&gt;convertToSelf($result);
+	}
+
+	/**
+	 * Method: __callStatic
+	 * =========================================================================
+	 * This provides a static API. As of PHP 5.5 we can&#039;t import functions from
+	 * different name spaces. In PHP 5.6 we can. So this is the next best thing.
+	 * 
+	 * For example compare this:
+	 * 
+	 *     \Gears\String\contains(&#039;hello world&#039;, &#039;world&#039;);
+	 * 
+	 * To this:
+	 * 
+	 *     use Gears\String as Str;
+	 *     Str::contains(&#039;hello world&#039;, &#039;world&#039;);
+	 * 
+	 * NOTE: Static calls like this will return the exact output from the
+	 * underlying function. So you can&#039;t do method chaining, etc.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name of the \Gears\String\&quot;FUNCTION&quot; to call.
+	 * $arguments - The arguments to pass to the function.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public static function __callStatic($name, $arguments)
+	{
+		// Create the function name
+		$func_name = &#039;\Gears\String\\&#039;.$name;
+
+		// Does the function exist
+		if (!function_exists($func_name))
+		{
+			// Try a macro
+			if (self::hasMacro($name))
+			{
+				return self::__macroCallStatic($name, $arguments);
+			}
+
+			// Bail out, we don&#039;t have a function to run
+			throw new \Exception(&#039;Gears String function does not exist!&#039;);
+		}
+
+		// Call the function
+		return call_user_func_array($func_name, $arguments);
+	}
+}
+</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"Functions.html","string\/src\/String.php":"#","arrays\/src\/Functions.php":"..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/src\/Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

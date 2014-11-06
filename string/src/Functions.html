@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			string/src/Functions.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: wildCardMatch
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="14"
+								data-end-line="69"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function wildCardMatch($haystack, $needle)</code></pre>
+										
+<p>This is the lazy mans regular expression. Each wildcard "*" character will
+be turned into a non-gready regular expression group.</p>
+<pre><code class="language-php">$html = '&lt;a title="foo" href="/hello"&gt;Hello World&lt;/a&gt;';
+
+$pattern = '&lt;a*href="*"*&gt;&lt;/a&gt;';
+
+$matches = wildCardMatch($html, $pattern);</code></pre>
+<p>The result would look like:</p>
+<pre><code class="language-php">Array
+(
+[0] =&gt; Array
+(
+[0] =&gt; &lt;a title="foo" href="/hello"&gt;Hello World&lt;/a&gt;
+)
+
+[1] =&gt; Array
+(
+[0] =&gt;  title="foo" 
+)
+
+[2] =&gt; Array
+(
+[0] =&gt; /hello
+)
+
+[3] =&gt; Array
+(
+[0] =&gt; 
+)
+
+[4] =&gt; Array
+(
+[0] =&gt; Hello World
+)
+
+)</code></pre>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to search.
+$needle - The pattern to look for.</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: search
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="85"
+								data-end-line="101"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function search($haystack, $needle, $regx = false)</code></pre>
+										
+<p>The search() method searches a string for a specified value,
+or regular expression, and returns the position of the match.
+This method returns -1 if no match is found.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the test to.
+$needle - This is what we are looking for inside the haystack.
+$regx - Set to true if needle is a regular expression.</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: replace
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="128"
+								data-end-line="151"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function replace($haystack, $needle, $replace, $regex = false)</code></pre>
+										
+<p>The replace() method searches a string for a specified value,
+or a regular expression, and returns a new string where the specified
+values are replaced.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the manipulation to.</p>
+<p>$needle - This is what we are looking for inside the haystack.
+This can also be an array of multiple needles.</p>
+<p>$replace - This is what will replace the needle. This can be an array of
+multiple replacements. Also if using regx, you can supply an annoymous
+function if you wish instead.</p>
+<p>$regex - Set to true if needle is a regular expression.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: match
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="173"
+								data-end-line="187"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function match($haystack, $regex)</code></pre>
+										
+<p>The match() method searches a string for a match against a regular
+expression, and returns the matches, as an Array object.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the test to.
+$regex - The regular expression.</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: matches
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="194"
+								data-end-line="209"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function matches($haystack, $pattern)</code></pre>
+										
+<p>This function is an alias for the laravel Str::is() method.
+The reason we have this is because the laravel method has the haystack and
+pattern parameters around the wrong way. And hence our fluent API fails.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the test to.
+$pattern - A simple string which uses "*" the wildcard character.</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: between
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="215"
+								data-end-line="233"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function between($haystack, $start, $end, $include = false)</code></pre>
+										
+<p>A very simple function that will extract the information between a start and
+an end string. This function only acts once on the given string. I find it
+helpful for parsing fetched HTML pages by getting to the part of the HTML
+I am intrested in. ie: A Table, I would then run BetweenPreg over the table.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the manipulation to.
+$start - A string that defines the start point
+$end - A string that defines the end point
+$include - If set to true we will include the start and end in the output.</p>
+<h2>Returns:</h2>
+<p>The string between a start and end string.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: betweenRegx
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="276"
+								data-end-line="295"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function betweenRegx($haystack, $start, $end)</code></pre>
+										
+<p>This does more or less the same thing as above except that it does it using
+a regular expression. It also matches multiple start and end strings.
+This function is great for parsing HTML/XML type data.</p>
+<h2>Parameters:</h2>
+<p>$haystack - The string haystack to perform the manipulation to.
+$start - A string that defines the start point
+$end - A string that defines the end point</p>
+<h2>Returns:</h2>
+<p>Returns an array of matches or false if it can't find anything. The first
+key in the array contains an array of results including the start and end
+strings. The second key contains an array of results that don't have the
+start and end strings.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: subString
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="312"
+								data-end-line="328"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function subString($string, $start, $end = null)</code></pre>
+										
+<p>The substring() method extracts the characters from a string, between two
+specified indices, and returns the new sub string. This method extracts the
+characters in a string between "from" and "to", not including "to" itself.</p>
+<h2>Parameters:</h2>
+<p>$string - The input string. Must be one character or longer.
+$start - The starting point of the extraction.
+$end - The ending point of the extraction.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: slice
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="341"
+								data-end-line="355"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function slice($string, $start, $end = null)</code></pre>
+										
+<p>This is really just an alias for substring for completeness sake</p>
+<h2>Parameters:</h2>
+<p>$string - The input string. Must be one character or longer.
+$start - The starting point of the extraction.
+$end - The ending point of the extraction.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: conCat
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="361"
+								data-end-line="378"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function conCat()</code></pre>
+										
+<p>The concat() method is used to join two or more strings. This method does
+not change the existing strings, but returns a new string containing the
+text of the joined strings.</p>
+<h2>Parameters:</h2>
+<p>$string1
+$string2
+$string3
+$etc</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: split
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="386"
+								data-end-line="401"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function split ($string, $at = &#039;&#039;)</code></pre>
+										
+<p>Splits a string into an array of substrings</p>
+<h2>Parameters:</h2>
+<p>$string - The string to split</p>
+<p>$at - What character to use as the delimeter for the split,
+if none supplied you will get an array of characters.</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_11" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: range
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="414"
+								data-end-line="431"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function range($string, $x, $y)</code></pre>
+										
+<p>This checks to see if the length of the haystack is between x and y
+Calulates inclusive of x and y, I felt this was the natural assumption.
+It was for me when I first used this function before it become part of
+the library anyway.</p>
+<h2>Parameters:</h2>
+<p>$string - A string to test
+$x - The lower value
+$y - The higher value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_12" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: charAt
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="448"
+								data-end-line="462"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function charAt($string, $point)</code></pre>
+										
+<p>The charAt() method returns the character at the specified index in a string.
+The index of the first character is 0, the second character is 1, and so on.</p>
+<h2>Parameters:</h2>
+<p>$string - The string to extract the character from.
+$point - The numerical index of the character, starting at 0.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_13" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: charCodeAt
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="468"
+								data-end-line="483"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function charCodeAt($string, $point)</code></pre>
+										
+<p>The charCodeAt() method returns the Unicode of the character at the
+specified index in a string. The index of the first character is 0,
+the second character 1, and so on.</p>
+<h2>Parameters:</h2>
+<p>$string - The string to extract the character from.
+$point - The numerical index of the character, starting at 0.</p>
+<h2>Returns:</h2>
+<p>int</p>
+				</div>
+			</div>
+
+					
+			<div id="block_14" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: fromCharCode
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="489"
+								data-end-line="501"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function fromCharCode($code)</code></pre>
+										
+<p>The fromCharCode() method converts Unicode values into characters.</p>
+<h2>Parameters:</h2>
+<p>$code - The ASCII Code</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_15" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: indexOf
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="507"
+								data-end-line="521"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function indexOf($haystack, $needle, $offset = 0)</code></pre>
+										
+<p>Just an alias for strpos</p>
+<h2>Parameters:</h2>
+<p>$haystack
+$needle
+$offset</p>
+<h2>Returns:</h2>
+<p>int</p>
+				</div>
+			</div>
+
+					
+			<div id="block_16" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: lastIndexOf
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="527"
+								data-end-line="541"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function lastIndexOf($haystack, $needle, $offset = 0)</code></pre>
+										
+<p>Just an alias for strrpos</p>
+<h2>Parameters:</h2>
+<p>$haystack
+$needle
+$offset</p>
+<h2>Returns:</h2>
+<p>int</p>
+				</div>
+			</div>
+
+					
+			<div id="block_17" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: humanise
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="547"
+								data-end-line="565"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function humanise($string)</code></pre>
+										
+<p>This does the reverse of camel case, snake case, etc.</p>
+<p>For example:</p>
+<p>fooBar  => Foo Bar
+foo-bar => Foo Bar
+foo_bar => Foo Bar</p>
+<h2>Parameters:</h2>
+<p>$string - The string to humanise.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_18" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: to
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="571"
+								data-end-line="598"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function to($string, $what)</code></pre>
+										
+<p>This function has been built with the fluent API in mind.
+Although can still be used procedurally.</p>
+<h2>Parameters:</h2>
+<p>$string - The string to change form, ie: lower case to upper case.</p>
+<p>$what - What do we want to change the string into.
+Current valid values for this:</p>
+<ul>
+<li>upper | uppercase | big</li>
+<li>lower | lowercase | small</li>
+<li>singular | one | 1</li>
+<li>plural | many | lots</li>
+<li>camel | camelcase</li>
+<li>slug | slugcase</li>
+<li>title | titlecase</li>
+<li>snake | snakecase</li>
+<li>studly | studlycase</li>
+<li>human | humanise | humanize</li>
+</ul>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_19" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: make
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="688"
+								data-end-line="701"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function make($string, $what)</code></pre>
+										
+<p>This is simply an alias for the "to" function above.</p>
+<h2>Parameters:</h2>
+<p>$string - See "to" function docs.
+$what - See "to" function docs.</p>
+<h2>Returns:</h2>
+<p>string</p>
+				</div>
+			</div>
+
+					
+			<div id="block_20" class="panel panel-default panel-warning">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Section: Laravel Stubs
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="707"
+								data-end-line="724"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+										
+<p>The following functions are just stubs for methods of the class:</p>
+<p>\Illuminate\Support\Str</p>
+<p>I could integrate these calls directly and dynamically into the
+Gears\String class. However then this procedural API would not match
+that of the Gears\String class.</p>
+<p>Each function does not define any arguments, we dynamically pick these up
+so that any changes to the methods definition in the original Laravel class
+are automatically picked up here.</p>
+<p>Thus if you are looking for documenation on how to use these functions.
+Please see: <a href="http://laravel.com/api/4.2/Illuminate/Support/Str.html" target="_blank">http://laravel.com/api/4.2/Illuminate/Support/Str.html</a></p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Function: wildCardMatch
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Function: search
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Function: replace
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Function: match
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Function: matches
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Function: between
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Function: betweenRegx
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Function: subString
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Function: slice
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Function: conCat
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Function: split
+					</a>
+																<a class="list-group-item" data-block-target="#block_11">
+						Function: range
+					</a>
+																<a class="list-group-item" data-block-target="#block_12">
+						Function: charAt
+					</a>
+																<a class="list-group-item" data-block-target="#block_13">
+						Function: charCodeAt
+					</a>
+																<a class="list-group-item" data-block-target="#block_14">
+						Function: fromCharCode
+					</a>
+																<a class="list-group-item" data-block-target="#block_15">
+						Function: indexOf
+					</a>
+																<a class="list-group-item" data-block-target="#block_16">
+						Function: lastIndexOf
+					</a>
+																<a class="list-group-item" data-block-target="#block_17">
+						Function: humanise
+					</a>
+																<a class="list-group-item" data-block-target="#block_18">
+						Function: to
+					</a>
+																<a class="list-group-item" data-block-target="#block_19">
+						Function: make
+					</a>
+																<a class="list-group-item" data-block-target="#block_20">
+						Section: Laravel Stubs
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						string/src/Functions.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\String;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Function: wildCardMatch
+ * =============================================================================
+ * This is the lazy mans regular expression. Each wildcard &quot;*&quot; character will
+ * be turned into a non-gready regular expression group.
+ *
+ * ```php
+ * $html = &#039;&lt;a title=&quot;foo&quot; href=&quot;/hello&quot;&gt;Hello World&lt;/a&gt;&#039;;
+ *
+ * $pattern = &#039;&lt;a*href=&quot;*&quot;*&gt;&lt;/a&gt;&#039;;
+ * 
+ * $matches = wildCardMatch($html, $pattern);
+ * ```
+ *
+ * The result would look like:
+ *
+ * ```php
+ * Array
+ * (
+ *     [0] =&gt; Array
+ *         (
+ *             [0] =&gt; &lt;a title=&quot;foo&quot; href=&quot;/hello&quot;&gt;Hello World&lt;/a&gt;
+ *         )
+ * 
+ *     [1] =&gt; Array
+ *         (
+ *             [0] =&gt;  title=&quot;foo&quot; 
+ *         )
+ * 
+ *     [2] =&gt; Array
+ *         (
+ *             [0] =&gt; /hello
+ *         )
+ * 
+ *     [3] =&gt; Array
+ *         (
+ *             [0] =&gt; 
+ *         )
+ * 
+ *     [4] =&gt; Array
+ *         (
+ *             [0] =&gt; Hello World
+ *         )
+ * 
+ * )
+ * ```
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to search.
+ * $needle - The pattern to look for.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function wildCardMatch($haystack, $needle)
+{
+	// Quote the entire needle, so that everything is treated literally
+	$pattern = preg_quote($needle, &#039;#&#039;);
+
+	// Then replace literal wildcards with a regular expression group
+	$pattern = str_replace(&#039;\*&#039;, &#039;(.*?)&#039;, $pattern);
+
+	// Run the regular expression
+	preg_match_all(&#039;#&#039;.$pattern.&#039;#s&#039;, $haystack, $matches);
+
+	// Return the matches
+	return $matches;
+}
+
+/**
+ * Function: search
+ * =============================================================================
+ * The search() method searches a string for a specified value,
+ * or regular expression, and returns the position of the match.
+ * This method returns -1 if no match is found.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the test to.
+ * $needle - This is what we are looking for inside the haystack.
+ * $regx - Set to true if needle is a regular expression.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function search($haystack, $needle, $regx = false)
+{
+	if ($regx)
+	{
+		if (preg_match($needle, $haystack, $match) == 1)
+		{
+			$pos = strpos($haystack, $match[0]);
+		}
+		else
+		{
+			$pos = -1;
+		}
+	}
+	else
+	{
+		$pos = strpos($haystack, $needle);
+		
+		if ($pos === false)
+		{
+			$pos = -1;
+		}
+	}
+	
+	return $pos;
+}
+
+/**
+ * Function: replace
+ * =============================================================================
+ * The replace() method searches a string for a specified value,
+ * or a regular expression, and returns a new string where the specified
+ * values are replaced.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the manipulation to.
+ * 
+ * $needle - This is what we are looking for inside the haystack.
+ * This can also be an array of multiple needles.
+ * 
+ * $replace - This is what will replace the needle. This can be an array of
+ * multiple replacements. Also if using regx, you can supply an annoymous
+ * function if you wish instead.
+ * 
+ * $regex - Set to true if needle is a regular expression.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function replace($haystack, $needle, $replace, $regex = false)
+{
+	if($regex)
+	{
+		if (is_callable($replace))
+		{
+			$result = preg_replace_callback($needle, $replace, $haystack);
+		}
+		else
+		{
+			$result = preg_replace($needle, $replace, $haystack);
+		}
+	}
+	else
+	{
+		$result = str_replace($needle, $replace, $haystack);
+	}
+	
+	return $result;
+}
+
+/**
+ * Function: match
+ * =============================================================================
+ * The match() method searches a string for a match against a regular
+ * expression, and returns the matches, as an Array object.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the test to.
+ * $regex - The regular expression.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function match($haystack, $regex)
+{
+	preg_match_all($regex, $haystack, $matches);
+	return $matches[0];
+}
+
+/**
+ * Function: matches
+ * =============================================================================
+ * This function is an alias for the laravel Str::is() method.
+ * The reason we have this is because the laravel method has the haystack and
+ * pattern parameters around the wrong way. And hence our fluent API fails.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the test to.
+ * $pattern - A simple string which uses &quot;*&quot; the wildcard character.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function matches($haystack, $pattern)
+{
+	return is($pattern, $haystack);
+}
+
+/**
+ * Function: between
+ * =============================================================================
+ * A very simple function that will extract the information between a start and
+ * an end string. This function only acts once on the given string. I find it
+ * helpful for parsing fetched HTML pages by getting to the part of the HTML
+ * I am intrested in. ie: A Table, I would then run BetweenPreg over the table.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the manipulation to.
+ * $start - A string that defines the start point
+ * $end - A string that defines the end point
+ * $include - If set to true we will include the start and end in the output.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * The string between a start and end string.
+ */
+function between($haystack, $start, $end, $include = false)
+{
+	// This is what we will return
+	$result = &#039;&#039;;
+	
+	// Add a little buffer
+	$haystack = &#039; &#039;.$haystack;
+	
+	// Can we find the start?
+	$ini = strpos($haystack, $start);
+	if ($ini === false)
+	{
+		// Nope so return nothing
+		return &#039;&#039;;
+	}
+
+	// Can we find the end?
+	if (strpos($haystack, $end) === false)
+	{
+		// Nope so return nothing
+		return &#039;&#039;;
+	}
+
+	// Move our position past the start point
+	$ini += strlen($start);
+	
+	// Get the length of the middle section
+	$len = strpos($haystack, $end, $ini) - $ini;
+	
+	// Grab the middle
+	$result = substr($haystack, $ini, $len);
+	
+	// Do we want the start and end?
+	if ($include)
+	{
+		$result = $start.$result.$end;
+	}
+	
+	// Return the final result
+	return $result;
+}
+
+/**
+ * Function: betweenRegx
+ * =============================================================================
+ * This does more or less the same thing as above except that it does it using
+ * a regular expression. It also matches multiple start and end strings.
+ * This function is great for parsing HTML/XML type data.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack - The string haystack to perform the manipulation to.
+ * $start - A string that defines the start point
+ * $end - A string that defines the end point
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * Returns an array of matches or false if it can&#039;t find anything. The first
+ * key in the array contains an array of results including the start and end
+ * strings. The second key contains an array of results that don&#039;t have the
+ * start and end strings.
+ */
+function betweenRegx($haystack, $start, $end)
+{
+	// Create the regular expression
+	$find = &#039;/&#039;.preg_quote($start, &#039;/&#039;).&#039;(.*?)&#039;.preg_quote($end, &#039;/&#039;).&#039;/s&#039;;
+	
+	// Run the regular expression
+	if (preg_match_all($find, $haystack, $matches))
+	{
+		return $matches;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+/**
+ * Function: subString
+ * =============================================================================
+ * The substring() method extracts the characters from a string, between two
+ * specified indices, and returns the new sub string. This method extracts the
+ * characters in a string between &quot;from&quot; and &quot;to&quot;, not including &quot;to&quot; itself.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The input string. Must be one character or longer.
+ * $start - The starting point of the extraction.
+ * $end - The ending point of the extraction.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function subString($string, $start, $end = null)
+{
+	if(empty($end))
+	{
+		return substr($string, $start);
+	}
+	else
+	{
+		return substr($string, $start, ($end - $start));
+	}
+}
+
+/**
+ * Function: slice
+ * =============================================================================
+ * This is really just an alias for substring for completeness sake
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The input string. Must be one character or longer.
+ * $start - The starting point of the extraction.
+ * $end - The ending point of the extraction.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function slice($string, $start, $end = null)
+{
+	return subString($string, $start, $end);
+}
+
+/**
+ * Function: conCat
+ * =============================================================================
+ * The concat() method is used to join two or more strings. This method does
+ * not change the existing strings, but returns a new string containing the
+ * text of the joined strings.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string1
+ * $string2
+ * $string3
+ * $etc
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function conCat()
+{
+	$result = &#039;&#039;;
+	foreach(func_get_args() as $arg) { $result .= (string)$arg; }
+	return $result;
+}
+
+/**
+ * Function: split
+ * =============================================================================
+ * Splits a string into an array of substrings
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The string to split
+ * 
+ * $at - What character to use as the delimeter for the split,
+ * if none supplied you will get an array of characters.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function split ($string, $at = &#039;&#039;)
+{
+	if(empty($at))
+	{
+		return str_split($string);
+	}
+	else
+	{
+		return explode($at, $string);
+	}
+}
+
+/**
+ * Function: range
+ * =============================================================================
+ * This checks to see if the length of the haystack is between x and y
+ * Calulates inclusive of x and y, I felt this was the natural assumption.
+ * It was for me when I first used this function before it become part of
+ * the library anyway.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - A string to test
+ * $x - The lower value
+ * $y - The higher value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function range($string, $x, $y)
+{
+	// Get the length of the string
+	$length = length($string);
+	
+	// Is it between x and y
+	if (($length &gt;= $x) &amp;&amp; ($length &lt;= $y))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+/**
+ * Function: charAt
+ * =============================================================================
+ * The charAt() method returns the character at the specified index in a string.
+ * The index of the first character is 0, the second character is 1, and so on.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The string to extract the character from.
+ * $point - The numerical index of the character, starting at 0.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function charAt($string, $point)
+{
+	return substr($string, $point, 1);
+}
+
+/**
+ * Function: charCodeAt
+ * =============================================================================
+ * The charCodeAt() method returns the Unicode of the character at the
+ * specified index in a string. The index of the first character is 0,
+ * the second character 1, and so on.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The string to extract the character from.
+ * $point - The numerical index of the character, starting at 0.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * int
+ */
+function charCodeAt($string, $point)
+{
+	return ord(substr($string, $point, 1));
+}
+
+/**
+ * Function: fromCharCode
+ * =============================================================================
+ * The fromCharCode() method converts Unicode values into characters.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $code - The ASCII Code
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function fromCharCode($code)
+{
+	return chr($code);
+}
+
+/**
+ * Function: indexOf
+ * =============================================================================
+ * Just an alias for strpos
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack
+ * $needle
+ * $offset
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * int
+ */
+function indexOf($haystack, $needle, $offset = 0)
+{
+	return strpos($haystack, $needle, $offset);
+}
+
+/**
+ * Function: lastIndexOf
+ * =============================================================================
+ * Just an alias for strrpos
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $haystack
+ * $needle
+ * $offset
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * int
+ */
+function lastIndexOf($haystack, $needle, $offset = 0)
+{
+	return strrpos($haystack, $needle, $offset);
+}
+
+/**
+ * Function: humanise
+ * =============================================================================
+ * This does the reverse of camel case, snake case, etc.
+ * 
+ * For example:
+ * 
+ *     fooBar  =&gt; Foo Bar
+ *     foo-bar =&gt; Foo Bar
+ *     foo_bar =&gt; Foo Bar
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The string to humanise.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function humanise($string)
+{
+	return ucwords(str_replace([&#039;_&#039;, &#039;-&#039;], &#039; &#039;, snake($string)));
+}
+
+/**
+ * Function: to
+ * =============================================================================
+ * This function has been built with the fluent API in mind.
+ * Although can still be used procedurally.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - The string to change form, ie: lower case to upper case.
+ * 
+ * $what - What do we want to change the string into.
+ * Current valid values for this:
+ * 
+ *     - upper | uppercase | big
+ *     - lower | lowercase | small
+ *     - singular | one | 1
+ *     - plural | many | lots
+ *     - camel | camelcase
+ *     - slug | slugcase
+ *     - title | titlecase
+ *     - snake | snakecase
+ *     - studly | studlycase
+ *     - human | humanise | humanize
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function to($string, $what)
+{
+	$what = lower($what);
+
+	switch ($what)
+	{
+		case &#039;upper&#039;:
+		case &#039;uppercase&#039;:
+		case &#039;big&#039;:
+		{
+			return upper($string);
+			break;
+		}
+
+		case &#039;lower&#039;:
+		case &#039;lowercase&#039;:
+		case &#039;small&#039;:
+		{
+			return lower($string);
+			break;
+		}
+
+		case &#039;singular&#039;:
+		case &#039;one&#039;:
+		case &#039;1&#039;:
+		case 1:
+		{
+			return singular($string);
+			break;
+		}
+
+		case &#039;plural&#039;:
+		case &#039;many&#039;:
+		case &#039;lots&#039;:
+		{
+			return plural($string);
+			break;
+		}
+
+		case &#039;camel&#039;:
+		case &#039;camelcase&#039;:
+		{
+			return camel($string);
+			break;
+		}
+
+		case &#039;slug&#039;:
+		case &#039;slugcase&#039;:
+		{
+			return slug($string);
+			break;
+		}
+
+		case &#039;title&#039;:
+		case &#039;titlecase&#039;:
+		{
+			return title($string);
+			break;
+		}
+
+		case &#039;snake&#039;:
+		case &#039;snakecase&#039;:
+		{
+			return snake($string);
+			break;
+		}
+
+		case &#039;studly&#039;:
+		case &#039;studlycase&#039;:
+		{
+			return studly($string);
+			break;
+		}
+
+		case &#039;humanise&#039;:
+		case &#039;humanize&#039;:
+		case &#039;human&#039;:
+		{
+			return humanise($string);
+			break;
+		}
+
+		default:
+		{
+			return $string;
+		}
+	}
+}
+
+/**
+ * Function: make
+ * =============================================================================
+ * This is simply an alias for the &quot;to&quot; function above.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $string - See &quot;to&quot; function docs.
+ * $what - See &quot;to&quot; function docs.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * string
+ */
+function make($string, $what)
+{
+	return to($string, $what);
+}
+
+/**
+ * Section: Laravel Stubs
+ * =============================================================================
+ * The following functions are just stubs for methods of the class:
+ * 
+ *     \Illuminate\Support\Str
+ * 
+ * I could integrate these calls directly and dynamically into the
+ * Gears\String class. However then this procedural API would not match
+ * that of the Gears\String class.
+ * 
+ * Each function does not define any arguments, we dynamically pick these up
+ * so that any changes to the methods definition in the original Laravel class
+ * are automatically picked up here.
+ * 
+ * Thus if you are looking for documenation on how to use these functions.
+ * Please see: http://laravel.com/api/4.2/Illuminate/Support/Str.html
+ */
+
+function ascii() { return call_user_func_array(&#039;\Illuminate\Support\Str::ascii&#039;, func_get_args()); }
+function camel() { return call_user_func_array(&#039;\Illuminate\Support\Str::camel&#039;, func_get_args()); }
+function contains() { return call_user_func_array(&#039;\Illuminate\Support\Str::contains&#039;, func_get_args()); }
+function startsWith() { return call_user_func_array(&#039;\Illuminate\Support\Str::startsWith&#039;, func_get_args()); }
+function endsWith() { return call_user_func_array(&#039;\Illuminate\Support\Str::endsWith&#039;, func_get_args()); }
+function finish() { return call_user_func_array(&#039;\Illuminate\Support\Str::finish&#039;, func_get_args()); }
+function is() { return call_user_func_array(&#039;\Illuminate\Support\Str::is&#039;, func_get_args()); }
+function length() { return call_user_func_array(&#039;\Illuminate\Support\Str::length&#039;, func_get_args()); }
+function limit() { return call_user_func_array(&#039;\Illuminate\Support\Str::limit&#039;, func_get_args()); }
+function lower() { return call_user_func_array(&#039;\Illuminate\Support\Str::lower&#039;, func_get_args()); }
+function upper() { return call_user_func_array(&#039;\Illuminate\Support\Str::upper&#039;, func_get_args()); }
+function words() { return call_user_func_array(&#039;\Illuminate\Support\Str::words&#039;, func_get_args()); }
+function plural() { return call_user_func_array(&#039;\Illuminate\Support\Str::plural&#039;, func_get_args()); }
+function random() { return call_user_func_array(&#039;\Illuminate\Support\Str::random&#039;, func_get_args()); }
+function quickRandom() { return call_user_func_array(&#039;\Illuminate\Support\Str::quickRandom&#039;, func_get_args()); }
+function title() { return call_user_func_array(&#039;\Illuminate\Support\Str::title&#039;, func_get_args()); }
+function singular() { return call_user_func_array(&#039;\Illuminate\Support\Str::singular&#039;, func_get_args()); }
+function slug() { return call_user_func_array(&#039;\Illuminate\Support\Str::slug&#039;, func_get_args()); }
+function snake() { return call_user_func_array(&#039;\Illuminate\Support\Str::snake&#039;, func_get_args()); }
+function studly() { return call_user_func_array(&#039;\Illuminate\Support\Str::studly&#039;, func_get_args()); }
+function parseCallback() { return call_user_func_array(&#039;\Illuminate\Support\Str::parseCallback&#039;, func_get_args()); }</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"#","string\/src\/String.php":"String.html","arrays\/src\/Functions.php":"..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/src\/Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

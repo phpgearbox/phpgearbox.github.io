@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			router/src/Router.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: routesPath
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="24"
+								data-end-line="28"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectRoutesPath;</code></pre>
+										
+<p>This is the file path to where our route file or files are stored.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: notFound
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="31"
+								data-end-line="37"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectNotFound;</code></pre>
+										
+<p>If this is set we will use this as the 404 response.
+If nothing is supplied we output a nice looking default 404 page.
+Credits: <a href="http://html5boilerplate.com/" target="_blank">http://html5boilerplate.com/</a></p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: exitOnComplete
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="40"
+								data-end-line="46"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectExitOnComplete;</code></pre>
+										
+<p>When set to true (the default) we will exit the current PHP process after
+sending the response. This ensures that no other output can mess things
+up. However some setups may require the opposite.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: dispatcher
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="49"
+								data-end-line="53"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectDispatcher;</code></pre>
+										
+<p>An instance of <code>Illuminate\Events\Dispatcher</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: finder
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="56"
+								data-end-line="60"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectFinder;</code></pre>
+										
+<p>An instance of <code>Symfony\Component\Finder\Finder</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: request
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="63"
+								data-end-line="67"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectRequest;</code></pre>
+										
+<p>An instance of <code>Illuminate\Http\Request</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: laravelRouter
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="70"
+								data-end-line="74"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectLaravelRouter;</code></pre>
+										
+<p>An instance of <code>Illuminate\Routing\Router</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: router
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="77"
+								data-end-line="82"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">private static $router;</code></pre>
+										
+<p>This is where we statically store a copy of the LaravelRouter
+after the container has been installed.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: setDefaults
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="85"
+								data-end-line="99"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected function setDefaults()</code></pre>
+										
+<p>This is where we set all our defaults. If you need to customise this
+container this is a good place to look to see what can be configured
+and how to configure it.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: install
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="125"
+								data-end-line="139"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function install()</code></pre>
+										
+<p>Once the router has been configured, simply run this method and we will
+resolve the router from the container. Setup some class alias's,
+add the routes and finally dispatch the underlying router.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: dispatch
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="254"
+								data-end-line="267"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function dispatch()</code></pre>
+										
+<p>This is just an alias of install as it makes slightly more sense to
+dispatch the router than to install it.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_11" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __callStatic
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="273"
+								data-end-line="295"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function __callStatic($name, $args)</code></pre>
+										
+<p>Okay so this is the magic method that makes it possible to do this:</p>
+<p>Route::get('/', function(){ return 'Hello World!'; });</p>
+<p>For more info on how the laravel route api works, please see:
+<a href="http://laravel.com/docs/routing" target="_blank">http://laravel.com/docs/routing</a></p>
+<h2>Parameters:</h2>
+<ul>
+<li>$name: The name of the method to call.</li>
+<li>$args: The argumnent array that is given to us.</li>
+</ul>
+<h2>Returns:</h2>
+<p>mixed</p>
+<h2>Throws:</h2>
+<ul>
+<li>RuntimeException: When the router has not been installed.</li>
+</ul>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Property: routesPath
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Property: notFound
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Property: exitOnComplete
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Property: dispatcher
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Property: finder
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Property: request
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Property: laravelRouter
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Property: router
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Method: setDefaults
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Method: install
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Method: dispatch
+					</a>
+																<a class="list-group-item" data-block-target="#block_11">
+						Method: __callStatic
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						router/src/Router.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use RuntimeException;
+use Gears\Di\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Router as LaravelRouter;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+class Router extends Container
+{
+	/**
+	 * Property: routesPath
+	 * =========================================================================
+	 * This is the file path to where our route file or files are stored.
+	 */
+	protected $injectRoutesPath;
+
+	/**
+	 * Property: notFound
+	 * =========================================================================
+	 * If this is set we will use this as the 404 response.
+	 * If nothing is supplied we output a nice looking default 404 page.
+	 * Credits: http://html5boilerplate.com/
+	 */
+	protected $injectNotFound;
+
+	/**
+	 * Property: exitOnComplete
+	 * =========================================================================
+	 * When set to true (the default) we will exit the current PHP process after
+	 * sending the response. This ensures that no other output can mess things
+	 * up. However some setups may require the opposite.
+	 */
+	protected $injectExitOnComplete;
+
+	/**
+	 * Property: dispatcher
+	 * =========================================================================
+	 * An instance of ```Illuminate\Events\Dispatcher```.
+	 */
+	protected $injectDispatcher;
+
+	/**
+	 * Property: finder
+	 * =========================================================================
+	 * An instance of ```Symfony\Component\Finder\Finder```.
+	 */
+	protected $injectFinder;
+
+	/**
+	 * Property: request
+	 * =========================================================================
+	 * An instance of ```Illuminate\Http\Request```.
+	 */
+	protected $injectRequest;
+
+	/**
+	 * Property: laravelRouter
+	 * =========================================================================
+	 * An instance of ```Illuminate\Routing\Router```.
+	 */
+	protected $injectLaravelRouter;
+
+	/**
+	 * Property: router
+	 * =========================================================================
+	 * This is where we statically store a copy of the LaravelRouter
+	 * after the container has been installed.
+	 */
+	private static $router;
+
+	/**
+	 * Method: setDefaults
+	 * =========================================================================
+	 * This is where we set all our defaults. If you need to customise this
+	 * container this is a good place to look to see what can be configured
+	 * and how to configure it.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	protected function setDefaults()
+	{
+		$this-&gt;exitOnComplete = true;
+
+		$this-&gt;dispatcher = function()
+		{
+			return new Dispatcher;
+		};
+
+		$this-&gt;finder = $this-&gt;factory(function()
+		{
+			return new Finder;
+		});
+
+		$this-&gt;request = function()
+		{
+			return Request::createFromGlobals();
+		};
+
+		$this-&gt;laravelRouter = function()
+		{
+			return new LaravelRouter($this-&gt;dispatcher);
+		};
+	}
+
+	/**
+	 * Method: install
+	 * =========================================================================
+	 * Once the router has been configured, simply run this method and we will
+	 * resolve the router from the container. Setup some class alias&#039;s,
+	 * add the routes and finally dispatch the underlying router.
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function install()
+	{
+		// Resolve the router from the container
+		self::$router = $this-&gt;laravelRouter;
+
+		// Alias ourselves
+		if (!class_exists(&#039;\Route&#039;))
+		{
+			class_alias(&#039;\Gears\Router&#039;, &#039;\Route&#039;);
+		}
+
+		if (!class_exists(&#039;\Gears\Route&#039;))
+		{
+			class_alias(&#039;\Gears\Router&#039;, &#039;\Gears\Route&#039;);
+		}
+
+		// Check if the path is a file or dir
+		if (is_dir($this-&gt;routesPath))
+		{
+			// Loop through all our route files.
+			foreach ($this-&gt;finder-&gt;files()-&gt;in($this-&gt;routesPath) as $file)
+			{
+				// Load the file
+				require($file-&gt;getRealpath());
+			}
+		}
+		else
+		{
+			// Load the single file
+			require($this-&gt;routesPath);
+		}
+
+		/*
+		 * Now that we have looped through all our routes we can reset the
+		 * static router property. We do this so that further static calls
+		 * to this class will fail.
+		 * 
+		 * We want to avoid this situation:
+		 * 
+		 * ```php
+		 * $router1 = new Gears\Router();
+		 * $router1-&gt;install();
+		 * 
+		 * $router2 = new Gears\Router();
+		 * 
+		 * // this route would not be added to router2 but to router1
+		 * Route::get(&#039;/&#039;, function(){ return &#039;foo&#039;; });
+		 * ```
+		 */
+		$router = self::$router;
+		self::$router = null;
+
+		try
+		{
+			// Run the router
+			$response = $router-&gt;dispatch($this-&gt;request);
+
+			// Send the response
+			$response-&gt;send();
+		}
+		catch (NotFoundHttpException $e)
+		{
+			/*
+			 * If the 404 is explicitly set to the boolean value of false.
+			 * We re-throw the exception and make that the responsibility
+			 * of the caller.
+			 */
+			if ($this-&gt;notFound === false) throw $e;
+
+			// Output the 404 header
+			header(&#039;HTTP/1.0 404 Not Found&#039;);
+
+			// Output our 404 page
+			if (!empty($this-&gt;notFound))
+			{
+				echo $this-&gt;notFound;
+			}
+			else
+			{
+				echo
+				&#039;
+					&lt;!doctype html&gt;
+					&lt;html lang=&quot;en&quot;&gt;
+						&lt;head&gt;
+							&lt;meta charset=&quot;utf-8&quot;&gt;
+							&lt;title&gt;Page Not Found&lt;/title&gt;
+							&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+							&lt;style&gt;
+								* { line-height: 1.2; margin: 0; }
+								html { color: #888; display: table; font-family: sans-serif; height: 100%; text-align: center; width: 100%; }
+								body { display: table-cell; vertical-align: middle; margin: 2em auto; }
+								h1 { color: #555; font-size: 2em; font-weight: 400; }
+								p { margin: 0 auto; width: 280px; }
+								@media only screen and (max-width: 280px)
+								{
+									body, p { width: 95%; }
+									h1 { font-size: 1.5em; margin: 0 0 0.3em 0; }
+								}
+							&lt;/style&gt;
+						&lt;/head&gt;
+						&lt;body&gt;
+							&lt;h1&gt;Page Not Found&lt;/h1&gt;
+							&lt;p&gt;Sorry, but the page you were trying to view does not exist.&lt;/p&gt;
+						&lt;/body&gt;
+					&lt;/html&gt;
+					&lt;!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx --&gt;
+				&#039;;
+			}
+		}
+
+		// We are all done now
+		if ($this-&gt;exitOnComplete) exit;
+	}
+
+	/**
+	 * Method: dispatch
+	 * =========================================================================
+	 * This is just an alias of install as it makes slightly more sense to
+	 * dispatch the router than to install it.
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function dispatch()
+	{
+		$this-&gt;install();
+	}
+
+	/**
+	 * Method: __callStatic
+	 * =========================================================================
+	 * Okay so this is the magic method that makes it possible to do this:
+	 *
+	 *     Route::get(&#039;/&#039;, function(){ return &#039;Hello World!&#039;; });
+	 *
+	 * For more info on how the laravel route api works, please see:
+	 * http://laravel.com/docs/routing
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $name: The name of the method to call.
+	 * - $args: The argumnent array that is given to us.
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 * 
+	 * Throws:
+	 * -------------------------------------------------------------------------
+	 * - RuntimeException: When the router has not been installed.
+	 */
+	public static function __callStatic($name, $args)
+	{
+		if (empty(self::$router))
+		{
+			throw new RuntimeException(&#039;You need to install a router first!&#039;);
+		}
+
+		return call_user_func_array([self::$router, $name], $args);
+	}
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"..\/src\/Functions.html","string\/src\/String.php":"..\/src\/String.html","arrays\/src\/Functions.php":"..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"#","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/src\/String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/src\/Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

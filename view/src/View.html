@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			view/src/View.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: viewsPath
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="27"
+								data-end-line="34"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $viewsPath;</code></pre>
+										
+<p>This is where we store the location of our views.
+This can either be a single path. Or an array of paths in effect
+creating a views include path. This is injected as the first argument
+to the constructor.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: cachePath
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="37"
+								data-end-line="42"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectCachePath;</code></pre>
+										
+<p>This is where we store the location of our views cache folder.
+We default this to a tmp dir, for super quick setup.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: filesystem
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="45"
+								data-end-line="49"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectFilesystem;</code></pre>
+										
+<p>An instance of <code>Illuminate\Filesystem\Filesystem</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: fileViewFinder
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="52"
+								data-end-line="56"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectFileViewFinder;</code></pre>
+										
+<p>An instance of <code>Illuminate\View\FileViewFinder</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: dispatcher
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="59"
+								data-end-line="63"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectDispatcher;</code></pre>
+										
+<p>An instance of <code>Illuminate\Events\Dispatcher</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: bladeCompiler
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="66"
+								data-end-line="70"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectBladeCompiler;</code></pre>
+										
+<p>An instance of <code>Illuminate\View\Compilers\BladeCompiler</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: phpEngine
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="73"
+								data-end-line="78"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectPhpEngine;</code></pre>
+										
+<p>This must be a protected closure.
+That returns an instance of <code>Illuminate\View\Engines\PhpEngine</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: bladeEngine
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="81"
+								data-end-line="86"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectBladeEngine;</code></pre>
+										
+<p>This must be a protected closure.
+That returns an instance of <code>Illuminate\View\Engines\CompilerEngine</code>.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: engineResolver
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="89"
+								data-end-line="100"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectEngineResolver;</code></pre>
+										
+<p>An instance of <code>Illuminate\View\Engines\EngineResolver</code>.
+We expect that the resolver has been configured something like:</p>
+<pre><code class="language-php">$resolver = new EngineResolver;
+$resolver-&gt;register('php', $this-&gt;phpEngine);
+$resolver-&gt;register('blade', $this-&gt;bladeEngine);</code></pre>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: factory
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="103"
+								data-end-line="107"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $injectFactory;</code></pre>
+										
+<p>This is where we store the final Laravel View Factory.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: instance
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="110"
+								data-end-line="114"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">private static $instance;</code></pre>
+										
+<p>This is used as part of the globalise functionality.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_11" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: setDefaults
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="117"
+								data-end-line="131"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected function setDefaults()</code></pre>
+										
+<p>This is where we set all our defaults. If you need to customise this
+container this is a good place to look to see what can be configured
+and how to configure it.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_12" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __construct
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="188"
+								data-end-line="231"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __construct($viewsPath, $config = [])</code></pre>
+										
+<p>Here we configure ourselves and then make sure the cache folder exists.</p>
+<p>Example usage:</p>
+<pre><code class="language-php">$view = new Gears\View('/path/to/my/views');
+echo $view-&gt;make('master');</code></pre>
+<blockquote>
+<p>NOTE: If you want to provide a custom cache path. It must be injected
+into the constructor. As we check that it exists at construction time.</p>
+</blockquote>
+<p>For example the following will not work:</p>
+<pre><code class="language-php">$view = new Gears\View('/path/to/my/views');
+$view-&gt;cachePath = '/custom/cache/path';</code></pre>
+<p>But this will work as expected:</p>
+<pre><code class="language-php">$view = new Gears\View('/path/to/my/views',
+[
+        'cachePath' =&gt; '/custom/cache/path'
+]);</code></pre>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+<h2>Throws:</h2>
+<ul>
+<li>RuntimeException: When the cache path is not writeable or
+we can not create the folder if it doesn't exist.</li>
+</ul>
+				</div>
+			</div>
+
+					
+			<div id="block_13" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: globalise
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="269"
+								data-end-line="298"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function globalise($alias = &#039;View&#039;)</code></pre>
+										
+<p>Now in a normal laravel application you can call the view api like so:</p>
+<pre><code class="language-php">View::make('my-view');</code></pre>
+<p>This is because laravel has the IoC container with Service Providers and
+Facades and other intresting things that work some magic to set this up
+for you. Have a look in you main app.php config file and checkout the
+aliases section.</p>
+<p>If you want to be able to do the same in your
+application you need to call this method.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$alias: This is the name of the alias to create. Defaults to View.</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+<h2>Throws:</h2>
+<ul>
+<li>RuntimeException: When a class of the same name as the alias
+already exists.</li>
+</ul>
+				</div>
+			</div>
+
+					
+			<div id="block_14" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __call
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="322"
+								data-end-line="336"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __call($name, $args)</code></pre>
+										
+<p>This will pass any unresolved method calls
+through to the main view factory object.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$name: The name of the method to call.</li>
+<li>$args: The argumnent array that is given to us.</li>
+</ul>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_15" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __callStatic
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="342"
+								data-end-line="360"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function __callStatic($name, $args)</code></pre>
+										
+<p>This will pass any unresolved static method calls
+through to the saved instance.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$name: The name of the method to call.</li>
+<li>$args: The argumnent array that is given to us.</li>
+</ul>
+<h2>Returns:</h2>
+<p>mixed</p>
+<h2>Throws:</h2>
+<ul>
+<li>RuntimeException: When we have not been globalised.</li>
+</ul>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Property: viewsPath
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Property: cachePath
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Property: filesystem
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Property: fileViewFinder
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Property: dispatcher
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Property: bladeCompiler
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Property: phpEngine
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Property: bladeEngine
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Property: engineResolver
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Property: factory
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Property: instance
+					</a>
+																<a class="list-group-item" data-block-target="#block_11">
+						Method: setDefaults
+					</a>
+																<a class="list-group-item" data-block-target="#block_12">
+						Method: __construct
+					</a>
+																<a class="list-group-item" data-block-target="#block_13">
+						Method: globalise
+					</a>
+																<a class="list-group-item" data-block-target="#block_14">
+						Method: __call
+					</a>
+																<a class="list-group-item" data-block-target="#block_15">
+						Method: __callStatic
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						view/src/View.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use RuntimeException;
+use Gears\Di\Container;
+use Illuminate\View\Factory;
+use Illuminate\View\FileViewFinder;
+use Illuminate\View\Engines\PhpEngine;
+use Illuminate\View\Engines\CompilerEngine;
+use Illuminate\View\Compilers\BladeCompiler;
+use Illuminate\View\Engines\EngineResolver;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Events\Dispatcher;
+
+class View extends Container
+{
+	/**
+	 * Property: viewsPath
+	 * =========================================================================
+	 * This is where we store the location of our views.
+	 * This can either be a single path. Or an array of paths in effect
+	 * creating a views include path. This is injected as the first argument
+	 * to the constructor.
+	 */
+	protected $viewsPath;
+
+	/**
+	 * Property: cachePath
+	 * =========================================================================
+	 * This is where we store the location of our views cache folder.
+	 * We default this to a tmp dir, for super quick setup.
+	 */
+	protected $injectCachePath;
+
+	/**
+	 * Property: filesystem
+	 * =========================================================================
+	 * An instance of ```Illuminate\Filesystem\Filesystem```.
+	 */
+	protected $injectFilesystem;
+
+	/**
+	 * Property: fileViewFinder
+	 * =========================================================================
+	 * An instance of ```Illuminate\View\FileViewFinder```.
+	 */
+	protected $injectFileViewFinder;
+
+	/**
+	 * Property: dispatcher
+	 * =========================================================================
+	 * An instance of ```Illuminate\Events\Dispatcher```.
+	 */
+	protected $injectDispatcher;
+
+	/**
+	 * Property: bladeCompiler
+	 * =========================================================================
+	 * An instance of ```Illuminate\View\Compilers\BladeCompiler```.
+	 */
+	protected $injectBladeCompiler;
+
+	/**
+	 * Property: phpEngine
+	 * =========================================================================
+	 * This must be a protected closure.
+	 * That returns an instance of ```Illuminate\View\Engines\PhpEngine```.
+	 */
+	protected $injectPhpEngine;
+
+	/**
+	 * Property: bladeEngine
+	 * =========================================================================
+	 * This must be a protected closure.
+	 * That returns an instance of ```Illuminate\View\Engines\CompilerEngine```.
+	 */
+	protected $injectBladeEngine;
+
+	/**
+	 * Property: engineResolver
+	 * =========================================================================
+	 * An instance of ```Illuminate\View\Engines\EngineResolver```.
+	 * We expect that the resolver has been configured something like:
+	 * 
+	 * ```php
+	 * $resolver = new EngineResolver;
+	 * $resolver-&gt;register(&#039;php&#039;, $this-&gt;phpEngine);
+	 * $resolver-&gt;register(&#039;blade&#039;, $this-&gt;bladeEngine);
+	 * ```
+	 */
+	protected $injectEngineResolver;
+
+	/**
+	 * Property: factory
+	 * =========================================================================
+	 * This is where we store the final Laravel View Factory.
+	 */
+	protected $injectFactory;
+
+	/**
+	 * Property: instance
+	 * =========================================================================
+	 * This is used as part of the globalise functionality.
+	 */
+	private static $instance;
+
+	/**
+	 * Method: setDefaults
+	 * =========================================================================
+	 * This is where we set all our defaults. If you need to customise this
+	 * container this is a good place to look to see what can be configured
+	 * and how to configure it.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	protected function setDefaults()
+	{
+		$this-&gt;cachePath = &#039;/tmp/gears-views-cache&#039;;
+
+		$this-&gt;filesystem = function()
+		{
+			return new Filesystem;
+		};
+
+		$this-&gt;dispatcher = function()
+		{
+			return new Dispatcher;
+		};
+
+		$this-&gt;fileViewFinder = function()
+		{
+			return new FileViewFinder($this-&gt;filesystem, $this-&gt;viewsPath);
+		};
+
+		$this-&gt;bladeCompiler = function()
+		{
+			return new BladeCompiler($this-&gt;filesystem, $this-&gt;cachePath);
+		};
+
+		$this-&gt;phpEngine = $this-&gt;protect(function()
+		{
+			return new PhpEngine;
+		});
+
+		$this-&gt;bladeEngine = $this-&gt;protect(function()
+		{
+			return new CompilerEngine($this-&gt;bladeCompiler, $this-&gt;filesystem);
+		});
+
+		$this-&gt;engineResolver = function()
+		{
+			$resolver = new EngineResolver;
+
+			$resolver-&gt;register(&#039;php&#039;, $this-&gt;phpEngine);
+
+			$resolver-&gt;register(&#039;blade&#039;, $this-&gt;bladeEngine);
+
+			return $resolver;
+		};
+
+		$this-&gt;factory = function()
+		{
+			return new Factory
+			(
+				$this-&gt;engineResolver,
+				$this-&gt;fileViewFinder,
+				$this-&gt;dispatcher
+			);
+		};
+	}
+
+	/**
+	 * Method: __construct
+	 * =========================================================================
+	 * Here we configure ourselves and then make sure the cache folder exists.
+	 * 
+	 * Example usage:
+	 * 
+	 * ```php
+	 * $view = new Gears\View(&#039;/path/to/my/views&#039;);
+	 * echo $view-&gt;make(&#039;master&#039;);
+	 * ```
+	 * 
+	 * &gt; NOTE: If you want to provide a custom cache path. It must be injected
+	 * &gt; into the constructor. As we check that it exists at construction time.
+	 * 
+	 * For example the following will not work:
+	 * 
+	 * ```php
+	 * $view = new Gears\View(&#039;/path/to/my/views&#039;);
+	 * $view-&gt;cachePath = &#039;/custom/cache/path&#039;;
+	 * ```
+	 * 
+	 * But this will work as expected:
+	 * 
+	 * ```php
+	 * $view = new Gears\View(&#039;/path/to/my/views&#039;,
+	 * [
+	 * 		&#039;cachePath&#039; =&gt; &#039;/custom/cache/path&#039;
+	 * ]);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 * 
+	 * Throws:
+	 * -------------------------------------------------------------------------
+	 * - RuntimeException: When the cache path is not writeable or
+	 *   we can not create the folder if it doesn&#039;t exist.
+	 */
+	public function __construct($viewsPath, $config = [])
+	{
+		parent::__construct($config);
+
+		if (is_array($viewsPath))
+		{
+			$this-&gt;viewsPath = $viewsPath;
+		}
+		else
+		{
+			$this-&gt;viewsPath = [$viewsPath];
+		}
+
+		// Make sure the cache folder exists
+		if (!is_dir($this-&gt;cachePath))
+		{
+			// Lets attempt to create the folder
+			if (!mkdir($this-&gt;cachePath, 0777, true))
+			{
+				// Bail out we couldn&#039;t create the folder
+				throw new RuntimeException
+				(
+					&#039;Blade Cache Folder could not be created!&#039;
+				);
+			}
+		}
+
+		// Make sure the cache folder is writeable
+		if (!is_writeable($this-&gt;cachePath))
+		{
+			throw new RuntimeException
+			(
+				&#039;Blade Cache Folder not writeable!&#039;
+			);
+		}
+	}
+
+	/**
+	 * Method: globalise
+	 * =========================================================================
+	 * Now in a normal laravel application you can call the view api like so:
+	 * 
+	 * ```php
+	 * View::make(&#039;my-view&#039;);
+	 * ```
+	 * 
+	 * This is because laravel has the IoC container with Service Providers and
+	 * Facades and other intresting things that work some magic to set this up
+	 * for you. Have a look in you main app.php config file and checkout the
+	 * aliases section.
+	 * 
+	 * If you want to be able to do the same in your
+	 * application you need to call this method.
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $alias: This is the name of the alias to create. Defaults to View.
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 * 
+	 * Throws:
+	 * -------------------------------------------------------------------------
+	 * - RuntimeException: When a class of the same name as the alias
+	 *   already exists.
+	 */
+	public function globalise($alias = &#039;View&#039;)
+	{
+		// Create the alias name
+		if (substr($alias, 0, 1) != &#039;\\&#039;)
+		{
+			// This ensures the alias is created in the global namespace.
+			$alias = &#039;\\&#039;.$alias;
+		}
+
+		// Check if a class already exists
+		if (class_exists($alias))
+		{
+			// Bail out, a class already exists with the same name.
+			throw new RuntimeException(&#039;Class already exists!&#039;);
+		}
+
+		// Create the alias
+		class_alias(&#039;\Gears\View&#039;, $alias);
+
+		// Save our instance
+		self::$instance = $this;
+	}
+
+	/**
+	 * Method: __call
+	 * =========================================================================
+	 * This will pass any unresolved method calls
+	 * through to the main view factory object.
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $name: The name of the method to call.
+	 * - $args: The argumnent array that is given to us.
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function __call($name, $args)
+	{
+		return call_user_func_array([$this-&gt;factory, $name], $args);
+	}
+
+	/**
+	 * Method: __callStatic
+	 * =========================================================================
+	 * This will pass any unresolved static method calls
+	 * through to the saved instance.
+	 *
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $name: The name of the method to call.
+	 * - $args: The argumnent array that is given to us.
+	 *
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 * 
+	 * Throws:
+	 * -------------------------------------------------------------------------
+	 * - RuntimeException: When we have not been globalised.
+	 */
+	public static function __callStatic($name, $args)
+	{
+		// Check to see if we have been globalised
+		if (empty(self::$instance))
+		{
+			throw new RuntimeException(&#039;You need to run globalise first!&#039;);
+		}
+
+		// Run the method from the static instance
+		return call_user_func_array([self::$instance, $name], $args);
+	}
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"..\/src\/Functions.html","string\/src\/String.php":"..\/src\/String.html","arrays\/src\/Functions.php":"..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"#"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/src\/String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/src\/Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

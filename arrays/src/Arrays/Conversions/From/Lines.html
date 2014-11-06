@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../../../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../../../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			arrays/src/Arrays/Conversions/From/Lines.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: memory
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="18"
+								data-end-line="25"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $memory = 5;</code></pre>
+										
+<p>This is the amount of memory that we will take up to create a
+file pointer to a temporay place in main memory.</p>
+<p>Defaults to 5MB</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: trim
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="28"
+								data-end-line="34"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $trim = true;</code></pre>
+										
+<p>Remove leading and trailing whitespace</p>
+<p>Defaults to true</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: Convert
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="37"
+								data-end-line="49"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function Convert($data)</code></pre>
+										
+<p>This will do the actual converting</p>
+<h2>Parameters:</h2>
+<p>$data - A string of lines to convert to an array</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Property: memory
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Property: trim
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Method: Convert
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						arrays/src/Arrays/Conversions/From/Lines.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\Arrays\Conversions\From;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use \Gears\Arrays\Conversions\Template;
+
+class Lines extends Template
+{
+	/**
+	 * Property: memory
+	 * =========================================================================
+	 * This is the amount of memory that we will take up to create a
+	 * file pointer to a temporay place in main memory.
+	 * 
+	 * Defaults to 5MB
+	 */
+	protected $memory = 5;
+	
+	/**
+	 * Property: trim
+	 * =========================================================================
+	 * Remove leading and trailing whitespace
+	 * 
+	 * Defaults to true
+	 */
+	protected $trim = true;
+	
+	/**
+	 * Method: Convert
+	 * =========================================================================
+	 * This will do the actual converting
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $data - A string of lines to convert to an array
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * array
+	 */
+	public function Convert($data)
+	{
+		// Create an array
+		$lines = array();
+		
+		// Create a file pointer to our Text Data
+		$fp = fopen(&#039;php://temp/maxmemory:&#039;.$this-&gt;memory*(1024*1024), &#039;r+&#039;);
+		fputs($fp, $data);
+		rewind($fp);
+		
+		// Loop through each line and add it to our array
+		while (!feof($fp))
+		{
+			if ($this-&gt;trim) $lines[] = trim(fgets($fp));
+			else $lines[] = fgets($fp);
+		}
+		fclose($fp);
+		
+		// Return the array
+		return $lines;
+	}
+}
+</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/..\/..\/..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/..\/..\/..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/..\/..\/..\/di\/Example.html","session\/src\/Session.php":"..\/..\/..\/..\/src\/Session.html","string\/src\/Functions.php":"..\/..\/..\/..\/src\/Functions.html","string\/src\/String.php":"..\/..\/..\/..\/src\/String.html","arrays\/src\/Functions.php":"..\/..\/..\/..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"#","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/..\/..\/..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/..\/..\/..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/..\/..\/..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/..\/..\/..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/..\/..\/..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/..\/..\/..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/..\/..\/..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/..\/..\/..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/..\/..\/..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/..\/..\/..\/src\/Router.html","view\/src\/View.php":"..\/..\/..\/..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Container.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/ServiceProviderInterface.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/..\/..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Session.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Functions.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/String.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":true,"children":[{"title":"Conversions","folder":true,"expanded":true,"children":[{"title":"From","folder":true,"expanded":true,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Table.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Json.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Xml.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Csv.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":true,"focus":true,"href":"#","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"Dom.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Iterator.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays\/Fluent.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Functions.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Arrays.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Console\/Application.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Generator.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/Router.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/..\/..\/..\/src\/View.html","icon":"..\/..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../../../../assets/script.js"></script>
+	</body>
+</html>

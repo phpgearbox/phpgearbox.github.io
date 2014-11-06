@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			arrays/src/Functions.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: convert
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="17"
+								data-end-line="34"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function convert($data, $converter, $options = array())</code></pre>
+										
+<p>This is a helper for our Conversion classes. Basically if you pass an array
+as the first argument we assume you want to convert that array into another
+format, such as XML. If however that first argument is not an array we assume
+it is a format that you want turned into an array.</p>
+<h2>Parameters:</h2>
+<p>$data - An array or other data to convert.
+$converter - The name of the converter to run.
+$options - An array of options that the converter can take.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: isArrayLike
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="55"
+								data-end-line="70"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function isArrayLike($value, $strict = false)</code></pre>
+										
+<p>This is our version of is_array. Because in our Fluent API we are dealing
+with Objects that act like arrays we needed a way to detect these objects
+as well as standard arrays.</p>
+<h2>Parameters:</h2>
+<p>$value - The value you think might be an array.
+$strict - If set to true we test specifically for an array like object.</p>
+<h2>Returns:</h2>
+<p>bool</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: debug
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="91"
+								data-end-line="105"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function debug($array)</code></pre>
+										
+<p>This will output an array for debug purposes.
+If running from a web server we will wrap it in some pre tags for you.
+And then we kill the script.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to output.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: searchRecursive
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="127"
+								data-end-line="143"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function searchRecursive($array, $search, $exact = false, $trav_keys = null)</code></pre>
+										
+<p>This will search an array recursively for your search term.
+We search both the array keys and the array values.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to search within.
+$search - The search term.
+$exact - When set to true the value must match exactly to the search term.
+$trav_keys - Used recursively to keep track of the traversed keys.</p>
+<h2>Returns:</h2>
+<p>An array of results or false if it can find anything</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: takeWhile
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="230"
+								data-end-line="244"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function takeWhile($array, Closure $predicate)</code></pre>
+										
+<p>Returns longest prefix of elements that satisfy the $predicate.
+The predicate will be passed value and key of each element.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to slice
+$predicate - A function that will evaluate ($value, $key) -> bool</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: dropWhile
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="258"
+								data-end-line="271"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function dropWhile($array, Closure $predicate)</code></pre>
+										
+<p>Drops longest prefix of elements satisfying $predicate and returns the rest.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to slice
+$predicate - A function that will evaluate ($value, $key) -> bool</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: firstKey
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="285"
+								data-end-line="299"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function firstKey($array, Closure $predicate, $default = null)</code></pre>
+										
+<p>Returns the first key satisfying the $predicate or null</p>
+<h2>Parameters:</h2>
+<p>$array - The array to search
+$predicate - callable ($value, $key) -> bool
+$default - An optional value to return when nothing is found</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: lastKey
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="313"
+								data-end-line="327"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function lastKey($array, Closure $predicate, $default = null)</code></pre>
+										
+<p>Returns the last key satisfying the $predicate or null</p>
+<h2>Parameters:</h2>
+<p>$array - The array to search
+$predicate - callable ($value, $key) -> bool
+$default - An optional value to return when nothing is found</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: indexBy
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="333"
+								data-end-line="346"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function indexBy($array, $indexBy)</code></pre>
+										
+<p>Re-indexes the array by either results of the callback or a sub-key</p>
+<h2>Parameters:</h2>
+<p>$array - The array to re-index
+$indexBy - A string or callable</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: testAll
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="367"
+								data-end-line="380"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function testAll($array, Closure $predicate)</code></pre>
+										
+<p>Returns true if all elements satisfy the given predicate</p>
+<h2>Parameters:</h2>
+<p>$array - The array to test
+$predicate - A callable to check each value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: testAny
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="394"
+								data-end-line="407"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function testAny($array, Closure $predicate)</code></pre>
+										
+<p>Returns true if at least one element satisfies the given predicate</p>
+<h2>Parameters:</h2>
+<p>$array - The array to test
+$predicate - A callable to check each value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_11" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: testOne
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="421"
+								data-end-line="434"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function testOne($array, Closure $predicate)</code></pre>
+										
+<p>Returns true if exactly one element satisfies the given predicate</p>
+<h2>Parameters:</h2>
+<p>$array - The array to test
+$predicate - A callable to check each value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_12" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: testNone
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="440"
+								data-end-line="453"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function testNone($array, Closure $predicate)</code></pre>
+										
+<p>Returns true if none of the elements satisfy $predicate</p>
+<h2>Parameters:</h2>
+<p>$array - The array to test
+$predicate - A callable to check each value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_13" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: testExactly
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="459"
+								data-end-line="473"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function testExactly($array, $n, Closure $predicate)</code></pre>
+										
+<p>Returns true if exactly $n elements satisfy the $predicate</p>
+<h2>Parameters:</h2>
+<p>$array - The array to test
+$n - The number of elements to match
+$predicate - A callable to check each value</p>
+<h2>Returns:</h2>
+<p>boolean</p>
+				</div>
+			</div>
+
+					
+			<div id="block_14" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: random
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="492"
+								data-end-line="505"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function random($array, $amount = 1)</code></pre>
+										
+<p>Get one or more items randomly from the array.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to select from.
+$amount - How large a sample do you want?</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_15" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: map
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="511"
+								data-end-line="529"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function map($array, Closure $callback)</code></pre>
+										
+<p>Map the collection into another, applying $callback to each element and its
+key. This function differs from the built-in array_map() in that it also
+passes the key as a second element to the callback.</p>
+<pre><code>MapWithKey(['a'=&gt;1,'b'=&gt;2,'c'=&gt;3], function($v){return $v * 2;});
+//=&gt; ['a' =&gt; 2, 'b' =&gt; 4, 'c' =&gt; 6]</code></pre>
+<h2>Parameters:</h2>
+<p>$array - The array to map
+$callback - A callable function</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_16" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: flatMap
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="535"
+								data-end-line="552"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function flatMap($array, Closure $callback)</code></pre>
+										
+<p>Maps an array into another by applying $callback
+to each element and flattening the results.</p>
+<pre><code>FlatMap(['foo', 'bar baz'], function ($s) { return explode(' ', $s); });
+//=&gt; ['foo', 'bar', 'baz']</code></pre>
+<h2>Parameters:</h2>
+<p>$array - The array to map
+$callback - A callable function</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_17" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: mapToAssoc
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="572"
+								data-end-line="590"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function mapToAssoc($array, Closure $callback)</code></pre>
+										
+<p>Creates an associative array by invoking $callback on each element and
+using the 2 resulting values as key and value.</p>
+<pre><code>$friends = [['name' =&gt; 'Bob', 'surname' =&gt; 'Hope', 'age' =&gt; 34], ['name' =&gt; 'Alice', 'surname' =&gt; 'Miller', 'age' =&gt; 23]];
+MapToAssoc($friends, function ($v, $k) { return [$v['name'].' '.$v['surname'], $v['age']] });
+//=&gt; ['Bob Hope' =&gt; 34, 'Alice Miller' =&gt; 23]</code></pre>
+<h2>Parameters:</h2>
+<p>$array -
+$callback - callable($value, $key) -> array($newKey, $newValue)</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_18" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: filterWithKey
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="604"
+								data-end-line="619"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function filterWithKey($array, Closure $predicate)</code></pre>
+										
+<p>Keeps only those elements that satisfy the $predicate
+Differs from array_filter() in that the key of each element
+is also passed to the predicate.</p>
+<h2>Parameters:</h2>
+<p>$array - The array to filter
+$predicate - callable($value, $key) -> bool</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_19" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: reduceWithKey
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="635"
+								data-end-line="652"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function reduceWithKey($array, $callback, $initial = null)</code></pre>
+										
+<p>Reduces the array into a single value by calling $callback repeatedly
+on the elements and their keys, passing the resulting value along each time.</p>
+<p>FoldWithKey(['foo', 'bar', 'baz'], function ($res, $v, $k) { return "$res $k:$e"; }); //=> ' 0:foo 1:bar 2:baz'</p>
+<h2>Parameters:</h2>
+<p>$array -
+$callback -  callable($accumulator, $value, $key) -> mixed
+$intial - </p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_20" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: minBy
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="663"
+								data-end-line="678"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function minBy($array, $callback)</code></pre>
+										
+<p>Finds the smallest element by result of $callback</p>
+<pre><code>MinBy(['tasty', 'big', 'cheeseburgers'], 'mb_strlen'); //=&gt; 'big'</code></pre>
+<h2>Parameters:</h2>
+<p>$array -
+$callback - callable($value, $key) -> number|string</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_21" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: maxBy
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="697"
+								data-end-line="712"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function maxBy($array, $callback)</code></pre>
+										
+<p>Finds the largest element by result of $callback</p>
+<pre><code>MaxBy(['tasty', 'big', 'cheeseburgers'], 'mb_strlen'); //=&gt; 'cheeseburgers'</code></pre>
+<h2>Parameters:</h2>
+<p>$array -
+$callback - callable($value, $key) -> number|string</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_22" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: sumBy
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="731"
+								data-end-line="746"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function sumBy($array, $callback)</code></pre>
+										
+<p>Returns the sum of all elements passed through $callback</p>
+<pre><code>SumBy(['tasty', 'big', 'cheeseburgers'], 'mb_strlen'); // =&gt; 21</code></pre>
+<h2>Parameters:</h2>
+<p>$array -
+$callback - callable($value, $key) -> number</p>
+<h2>Returns:</h2>
+<p>int</p>
+				</div>
+			</div>
+
+					
+			<div id="block_23" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: partition
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="759"
+								data-end-line="773"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function partition($array, $predicate)</code></pre>
+										
+<p>Returns two arrays: one with elements that satisfy the predicate,
+the other with elements that don't</p>
+<h2>Parameters:</h2>
+<p>$array - 
+$predicate - </p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_24" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Function: zip
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="789"
+								data-end-line="805"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function zip()</code></pre>
+										
+<p>Zips together two or more arrays.</p>
+<pre><code>Zip(range(1, 5), range('a', 'e'), [5, 4, 3, 2, 1]);
+//=&gt; [[1, a, 5], [2, b, 4], [3, c, 3], [4, d, 2], [5, e, 1]]</code></pre>
+<h2>Parameters:</h2>
+<p>$array1 -
+$array2 - </p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_25" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Add an element to an array using &quot;dot&quot; notation if it doesn&#039;t exist.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="826"
+								data-end-line="833"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function add($array, $key, $value)</code></pre>
+										<p>@param  array   $array
+@param  string  $key
+@param  mixed   $value
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_26" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Build a new array using a callback.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="839"
+								data-end-line="845"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function build($array, Closure $callback)</code></pre>
+										<p>@param  array     $array
+@param  \Closure  $callback
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_27" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Divide an array into two arrays. One with keys and the other with values.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="851"
+								data-end-line="856"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function divide($array)</code></pre>
+										<p>@param  array  $array
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_28" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Flatten a multi-dimensional associative array with dots.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="862"
+								data-end-line="868"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function dot($array, $prepend = &#039;&#039;)</code></pre>
+										<p>@param  array   $array
+@param  string  $prepend
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_29" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Get all of the given array except for a specified array of items.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="874"
+								data-end-line="880"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function except($array, $keys)</code></pre>
+										<p>@param  array  $array
+@param  array|string  $keys
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_30" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Fetch a flattened array of a nested array element.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="886"
+								data-end-line="892"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function fetch($array, $key)</code></pre>
+										<p>@param  array   $array
+@param  string  $key
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_31" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Return the first element in an array passing a given truth test.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="898"
+								data-end-line="905"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function first($array, $callback, $default = null)</code></pre>
+										<p>@param  array     $array
+@param  \Closure  $callback
+@param  mixed     $default
+@return mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_32" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Return the last element in an array passing a given truth test.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="911"
+								data-end-line="918"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function last($array, $callback, $default = null)</code></pre>
+										<p>@param  array     $array
+@param  \Closure  $callback
+@param  mixed     $default
+@return mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_33" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Flatten a multi-dimensional array into a single level.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="924"
+								data-end-line="929"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function flatten($array)</code></pre>
+										<p>@param  array  $array
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_34" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Remove one or many array items from a given array using &quot;dot&quot; notation.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="935"
+								data-end-line="941"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function forget(&amp;$array, $keys)</code></pre>
+										<p>@param  array  $array
+@param  array|string  $keys
+@return void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_35" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Get an item from an array using &quot;dot&quot; notation.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="947"
+								data-end-line="954"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function get($array, $key, $default = null)</code></pre>
+										<p>@param  array   $array
+@param  string  $key
+@param  mixed   $default
+@return mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_36" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Get a subset of the items from the given array.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="960"
+								data-end-line="966"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function only($array, $keys)</code></pre>
+										<p>@param  array  $array
+@param  array|string  $keys
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_37" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Pluck an array of values from an array.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="972"
+								data-end-line="979"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function pluck($array, $value, $key = null)</code></pre>
+										<p>@param  array   $array
+@param  string  $value
+@param  string  $key
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_38" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Get a value from the array, and remove it.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="985"
+								data-end-line="992"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function pull(&amp;$array, $key, $default = null)</code></pre>
+										<p>@param  array   $array
+@param  string  $key
+@param  mixed   $default
+@return mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_39" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Set an array item to a given value using &quot;dot&quot; notation.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="998"
+								data-end-line="1007"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function set(&amp;$array, $key, $value)</code></pre>
+										<p>If no key is given to the method, the entire array will be replaced.</p>
+<p>@param  array   $array
+@param  string  $key
+@param  mixed   $value
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_40" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Sort the array using the given Closure.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="1013"
+								data-end-line="1019"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function sort($array, Closure $callback)</code></pre>
+										<p>@param  array     $array
+@param  \Closure  $callback
+@return array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_41" class="panel panel-default ">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Filter the array using the given Closure.
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="1025"
+								data-end-line="1031"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">function where($array, Closure $callback)</code></pre>
+										<p>@param  array     $array
+@param  \Closure  $callback
+@return array</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Function: convert
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Function: isArrayLike
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Function: debug
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Function: searchRecursive
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Function: takeWhile
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Function: dropWhile
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Function: firstKey
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Function: lastKey
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Function: indexBy
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Function: testAll
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Function: testAny
+					</a>
+																<a class="list-group-item" data-block-target="#block_11">
+						Function: testOne
+					</a>
+																<a class="list-group-item" data-block-target="#block_12">
+						Function: testNone
+					</a>
+																<a class="list-group-item" data-block-target="#block_13">
+						Function: testExactly
+					</a>
+																<a class="list-group-item" data-block-target="#block_14">
+						Function: random
+					</a>
+																<a class="list-group-item" data-block-target="#block_15">
+						Function: map
+					</a>
+																<a class="list-group-item" data-block-target="#block_16">
+						Function: flatMap
+					</a>
+																<a class="list-group-item" data-block-target="#block_17">
+						Function: mapToAssoc
+					</a>
+																<a class="list-group-item" data-block-target="#block_18">
+						Function: filterWithKey
+					</a>
+																<a class="list-group-item" data-block-target="#block_19">
+						Function: reduceWithKey
+					</a>
+																<a class="list-group-item" data-block-target="#block_20">
+						Function: minBy
+					</a>
+																<a class="list-group-item" data-block-target="#block_21">
+						Function: maxBy
+					</a>
+																<a class="list-group-item" data-block-target="#block_22">
+						Function: sumBy
+					</a>
+																<a class="list-group-item" data-block-target="#block_23">
+						Function: partition
+					</a>
+																<a class="list-group-item" data-block-target="#block_24">
+						Function: zip
+					</a>
+																<a class="list-group-item" data-block-target="#block_25">
+						Add an element to an array using &quot;dot&quot; notation if it doesn&#039;t exist.
+					</a>
+																<a class="list-group-item" data-block-target="#block_26">
+						Build a new array using a callback.
+					</a>
+																<a class="list-group-item" data-block-target="#block_27">
+						Divide an array into two arrays. One with keys and the other with values.
+					</a>
+																<a class="list-group-item" data-block-target="#block_28">
+						Flatten a multi-dimensional associative array with dots.
+					</a>
+																<a class="list-group-item" data-block-target="#block_29">
+						Get all of the given array except for a specified array of items.
+					</a>
+																<a class="list-group-item" data-block-target="#block_30">
+						Fetch a flattened array of a nested array element.
+					</a>
+																<a class="list-group-item" data-block-target="#block_31">
+						Return the first element in an array passing a given truth test.
+					</a>
+																<a class="list-group-item" data-block-target="#block_32">
+						Return the last element in an array passing a given truth test.
+					</a>
+																<a class="list-group-item" data-block-target="#block_33">
+						Flatten a multi-dimensional array into a single level.
+					</a>
+																<a class="list-group-item" data-block-target="#block_34">
+						Remove one or many array items from a given array using &quot;dot&quot; notation.
+					</a>
+																<a class="list-group-item" data-block-target="#block_35">
+						Get an item from an array using &quot;dot&quot; notation.
+					</a>
+																<a class="list-group-item" data-block-target="#block_36">
+						Get a subset of the items from the given array.
+					</a>
+																<a class="list-group-item" data-block-target="#block_37">
+						Pluck an array of values from an array.
+					</a>
+																<a class="list-group-item" data-block-target="#block_38">
+						Get a value from the array, and remove it.
+					</a>
+																<a class="list-group-item" data-block-target="#block_39">
+						Set an array item to a given value using &quot;dot&quot; notation.
+					</a>
+																<a class="list-group-item" data-block-target="#block_40">
+						Sort the array using the given Closure.
+					</a>
+																<a class="list-group-item" data-block-target="#block_41">
+						Filter the array using the given Closure.
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						arrays/src/Functions.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\Arrays;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use \Closure;
+use \Gears\Arrays as Arr;
+
+/**
+ * Function: convert
+ * =============================================================================
+ * This is a helper for our Conversion classes. Basically if you pass an array
+ * as the first argument we assume you want to convert that array into another
+ * format, such as XML. If however that first argument is not an array we assume
+ * it is a format that you want turned into an array.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $data - An array or other data to convert.
+ * $converter - The name of the converter to run.
+ * $options - An array of options that the converter can take.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function convert($data, $converter, $options = array())
+{
+	if (isArrayLike($data))
+	{
+		// Create the converter class name
+		$converter = &#039;\Gears\Arrays\Conversions\To\\&#039;.ucfirst($converter);
+	}
+	else
+	{
+		// Create the converter class name
+		$converter = &#039;\Gears\Arrays\Conversions\From\\&#039;.ucfirst($converter);
+	}
+
+	// Initiate a new converter
+	$converter =  new $converter($options);
+
+	// Convert the data to some other data
+	return $converter-&gt;Convert($data);
+}
+
+/**
+ * Function: isArrayLike
+ * =============================================================================
+ * This is our version of is_array. Because in our Fluent API we are dealing
+ * with Objects that act like arrays we needed a way to detect these objects
+ * as well as standard arrays.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $value - The value you think might be an array.
+ * $strict - If set to true we test specifically for an array like object.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * bool
+ */
+function isArrayLike($value, $strict = false)
+{
+	if ($strict)
+	{
+		return
+		(
+			$value instanceof \ArrayAccess &amp;&amp;
+			$value instanceof \Traversable
+		);
+	}
+	else
+	{
+		return is_array($value) ||
+		(
+			$value instanceof \ArrayAccess &amp;&amp;
+			$value instanceof \Traversable
+		);
+	}
+}
+
+/**
+ * Function: debug
+ * =============================================================================
+ * This will output an array for debug purposes.
+ * If running from a web server we will wrap it in some pre tags for you.
+ * And then we kill the script.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to output.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * void
+ */
+function debug($array)
+{
+	// are we running on the command line or in a browser
+	if (php_sapi_name() == &#039;cli&#039;)
+	{
+		echo &quot;\n\nARRAY DUMP:\n-----\n&quot;.print_r($array, true).&quot;\n\n&quot;;
+	}
+	else
+	{
+		echo
+			&#039;&lt;div style=&quot;text-align:left;&quot;&gt;&#039;.
+				&#039;&lt;h1&gt;ARRAY DUMP&lt;/h1&gt;&lt;hr&gt;&#039;.
+				&#039;&lt;pre&gt;&#039;.print_r($array, true).&#039;&lt;/pre&gt;&#039;.
+			&#039;&lt;/div&gt;&#039;
+		;
+	}
+
+	// kill php
+	exit;
+}
+
+/**
+ * Function: searchRecursive
+ * =============================================================================
+ * This will search an array recursively for your search term.
+ * We search both the array keys and the array values.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to search within.
+ * $search - The search term.
+ * $exact - When set to true the value must match exactly to the search term.
+ * $trav_keys - Used recursively to keep track of the traversed keys.
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * An array of results or false if it can find anything
+ */
+function searchRecursive($array, $search, $exact = false, $trav_keys = null)
+{
+	// Check to make sure we have something to search in.
+	if(!isArrayLike($array) || ($trav_keys &amp;&amp; !isArrayLike($trav_keys)))
+	{
+		return false;
+	}
+	
+	// Create a Results array
+	$results = [];
+	
+	// Loop through each value in the array
+	foreach($array as $key =&gt; $val)
+	{
+		// Create a list of keys that we used to find the result
+		$used_keys = $trav_keys ? array_merge($trav_keys, [$key]) : [$key];
+		
+		// Check for an exact hit on the key
+		if ($key === $search)
+		{
+			$results[] =
+			[
+				&#039;type&#039; =&gt; &quot;key&quot;,
+				&#039;hit&#039; =&gt; $key,
+				&#039;keys&#039; =&gt; $used_keys,
+				&#039;val&#039; =&gt; $val
+			];
+		}
+		
+		// Can we match to non exact hits?
+		elseif (!$exact)
+		{
+			// Check to see if the array key contains the search term
+			if (strpos(strtolower($key), strtolower($search)) !== false)
+			{
+				$results[] =
+				[
+					&#039;type&#039; =&gt; &quot;key&quot;,
+					&#039;hit&#039; =&gt; $key,
+					&#039;keys&#039; =&gt; $used_keys,
+					&#039;val&#039; =&gt; $val
+				];
+			}
+		}
+		
+		// Check to see if the value is another nested array
+		if (isArrayLike($val))
+		{
+			// Recursively call ourselves
+			$recursive = searchRecursive($val, $search, $exact, $used_keys);
+			if ($recursive) $results = array_merge($results, $recursive);
+		}
+		
+		// Check for an exact hit on the value
+		elseif ($val === $search)
+		{
+			$results[] =
+			[
+				&#039;type&#039; =&gt; &quot;val&quot;,
+				&#039;hit&#039; =&gt; $val,
+				&#039;keys&#039; =&gt; $used_keys,
+				&#039;val&#039; =&gt; $val
+			];
+		}
+		
+		// Can we match to non exact hits?
+		elseif (!$exact)
+		{
+			// Check to see if the array key contains the search term
+			if (strpos(strtolower($val), strtolower($search)) !== false)
+			{
+				$results[] =
+				[
+					&#039;type&#039; =&gt; &quot;val&quot;,
+					&#039;hit&#039; =&gt; $val,
+					&#039;keys&#039; =&gt; $used_keys,
+					&#039;val&#039; =&gt; $val
+				];
+			}
+		}
+	}
+	
+	// Return our results
+	return $results ? $results : false;
+}
+
+/**
+ * Function: takeWhile
+ * =============================================================================
+ * Returns longest prefix of elements that satisfy the $predicate.
+ * The predicate will be passed value and key of each element.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to slice
+ * $predicate - A function that will evaluate ($value, $key) -&gt; bool
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function takeWhile($array, Closure $predicate)
+{
+	$n = 0;
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		if (!$predicate($value, $key)) break;
+		++$n;
+	}
+	
+	return array_slice($array, 0, $n);
+}
+
+/**
+ * Function: dropWhile
+ * =============================================================================
+ * Drops longest prefix of elements satisfying $predicate and returns the rest.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to slice
+ * $predicate - A function that will evaluate ($value, $key) -&gt; bool
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function dropWhile($array, Closure $predicate)
+{
+	$n = 0;
+	
+	foreach ($array as $key =&gt; $val)
+	{
+		if (!$predicate($val, $key)) break;
+		++$n;
+	}
+
+	return array_slice($array, $n);
+}
+
+/**
+ * Function: firstKey
+ * =============================================================================
+ * Returns the first key satisfying the $predicate or null
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to search
+ * $predicate - callable ($value, $key) -&gt; bool
+ * $default - An optional value to return when nothing is found
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function firstKey($array, Closure $predicate, $default = null)
+{
+	foreach ($array as $key =&gt; $value)
+	{
+		if ($predicate($value, $key))
+		{
+			return $key;
+		}
+	}
+	
+	return $default;
+}
+
+/**
+ * Function: lastKey
+ * =============================================================================
+ * Returns the last key satisfying the $predicate or null
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to search
+ * $predicate - callable ($value, $key) -&gt; bool
+ * $default - An optional value to return when nothing is found
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function lastKey($array, Closure $predicate, $default = null)
+{
+	return firstKey(array_reverse($array, true), $predicate, $default);
+}
+
+/**
+ * Function: indexBy
+ * =============================================================================
+ * Re-indexes the array by either results of the callback or a sub-key
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to re-index
+ * $indexBy - A string or callable
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function indexBy($array, $indexBy)
+{
+	$indexed = array();
+
+	foreach ($array as $element)
+	{
+		if (!is_string($indexBy) &amp;&amp; is_callable($indexBy))
+		{
+
+			$indexed[$indexBy($element)] = $element;
+		}
+		else
+		{
+			$indexed[data_get($element, $indexBy)] = $element;
+		}
+	}
+	
+	return $indexed;
+}
+
+/**
+ * Function: testAll
+ * =============================================================================
+ * Returns true if all elements satisfy the given predicate
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to test
+ * $predicate - A callable to check each value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function testAll($array, Closure $predicate)
+{
+	foreach ($array as $key =&gt; $value)
+	{
+		if (!$predicate($value, $key))
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+/**
+ * Function: testAny
+ * =============================================================================
+ * Returns true if at least one element satisfies the given predicate
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to test
+ * $predicate - A callable to check each value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function testAny($array, Closure $predicate)
+{
+	foreach ($array as $key =&gt; $value)
+	{
+		if ($predicate($value, $key))
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+/**
+ * Function: testOne
+ * =============================================================================
+ * Returns true if exactly one element satisfies the given predicate
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to test
+ * $predicate - A callable to check each value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function testOne($array, Closure $predicate)
+{
+	return testExactly($array, 1, $predicate);
+}
+
+/**
+ * Function: testNone
+ * =============================================================================
+ * Returns true if none of the elements satisfy $predicate
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to test
+ * $predicate - A callable to check each value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function testNone($array, Closure $predicate)
+{
+	return testExactly($array, 0, $predicate);
+}
+
+/**
+ * Function: testExactly
+ * =============================================================================
+ * Returns true if exactly $n elements satisfy the $predicate
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to test
+ * $n - The number of elements to match
+ * $predicate - A callable to check each value
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * boolean
+ */
+function testExactly($array, $n, Closure $predicate)
+{
+	$found = 0;
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		if ($predicate($value, $key))
+		{
+			if (++$found &gt; $n)
+			{
+				return false;
+			}
+		}
+	}
+	
+	return $found == $n;
+}
+
+/**
+ * Function: random
+ * =============================================================================
+ * Get one or more items randomly from the array.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to select from.
+ * $amount - How large a sample do you want?
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function random($array, $amount = 1)
+{
+	return Arr::a($array)-&gt;random($amount)-&gt;all();
+}
+
+/**
+ * Function: map
+ * =============================================================================
+ * Map the collection into another, applying $callback to each element and its
+ * key. This function differs from the built-in array_map() in that it also
+ * passes the key as a second element to the callback.
+ * 
+ * 	MapWithKey([&#039;a&#039;=&gt;1,&#039;b&#039;=&gt;2,&#039;c&#039;=&gt;3], function($v){return $v * 2;});
+ * 	//=&gt; [&#039;a&#039; =&gt; 2, &#039;b&#039; =&gt; 4, &#039;c&#039; =&gt; 6]
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to map
+ * $callback - A callable function
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function map($array, Closure $callback)
+{
+	return Arr::a($array)-&gt;map($callback)-&gt;all();
+}
+
+/**
+ * Function: flatMap
+ * =============================================================================
+ * Maps an array into another by applying $callback
+ * to each element and flattening the results.
+ * 
+ * 	FlatMap([&#039;foo&#039;, &#039;bar baz&#039;], function ($s) { return explode(&#039; &#039;, $s); });
+ * 	//=&gt; [&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to map
+ * $callback - A callable function
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function flatMap($array, Closure $callback)
+{
+	$result = array();
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		$newValues = $callback($value, $key);
+		if ($newValues)
+		{
+			foreach ($newValues as $newValue)
+			{
+				$result[] = $newValue;
+			}
+		}
+	}
+	
+	return $result;
+}
+
+/**
+ * Function: mapToAssoc
+ * =============================================================================
+ * Creates an associative array by invoking $callback on each element and
+ * using the 2 resulting values as key and value.
+ * 
+ * 	$friends = [[&#039;name&#039; =&gt; &#039;Bob&#039;, &#039;surname&#039; =&gt; &#039;Hope&#039;, &#039;age&#039; =&gt; 34], [&#039;name&#039; =&gt; &#039;Alice&#039;, &#039;surname&#039; =&gt; &#039;Miller&#039;, &#039;age&#039; =&gt; 23]];
+ * 	MapToAssoc($friends, function ($v, $k) { return [$v[&#039;name&#039;].&#039; &#039;.$v[&#039;surname&#039;], $v[&#039;age&#039;]] });
+ * 	//=&gt; [&#039;Bob Hope&#039; =&gt; 34, &#039;Alice Miller&#039; =&gt; 23]
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array -
+ * $callback - callable($value, $key) -&gt; array($newKey, $newValue)
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function mapToAssoc($array, Closure $callback)
+{
+	$mapped = array();
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		list($newKey, $newValue) = $callback($value, $key);
+		$mapped[$newKey] = $newValue;
+	}
+	
+	return $mapped;
+}
+
+/**
+ * Function: filterWithKey
+ * =============================================================================
+ * Keeps only those elements that satisfy the $predicate
+ * Differs from array_filter() in that the key of each element
+ * is also passed to the predicate.
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - The array to filter
+ * $predicate - callable($value, $key) -&gt; bool
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function filterWithKey($array, Closure $predicate)
+{
+	$result = array();
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		if ($predicate($value, $key))
+		{
+			$result[$key] = $value;
+		}
+	}
+	
+	return $result;
+}
+
+/**
+ * Function: reduceWithKey
+ * =============================================================================
+ * Reduces the array into a single value by calling $callback repeatedly
+ * on the elements and their keys, passing the resulting value along each time.
+ * 
+ * FoldWithKey([&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;], function ($res, $v, $k) { return &quot;$res $k:$e&quot;; }); //=&gt; &#039; 0:foo 1:bar 2:baz&#039;
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array -
+ * $callback -  callable($accumulator, $value, $key) -&gt; mixed
+ * $intial - 
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function reduceWithKey($array, $callback, $initial = null)
+{
+	foreach ($array as $key =&gt; $value)
+	{
+		$initial = $callback($initial, $value, $key);
+	}
+	
+	return $initial;
+}
+
+/**
+ * Function: minBy
+ * =============================================================================
+ * Finds the smallest element by result of $callback
+ * 
+ * 	MinBy([&#039;tasty&#039;, &#039;big&#039;, &#039;cheeseburgers&#039;], &#039;mb_strlen&#039;); //=&gt; &#039;big&#039;
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array -
+ * $callback - callable($value, $key) -&gt; number|string
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function minBy($array, $callback)
+{
+	$minResult = null;
+	$minElement = null;
+	
+	foreach ($array as $element)
+	{
+		$current = $callback($element);
+		if (!isset($minResult) || $current &lt; $minResult)
+		{
+			$minResult = $current;
+			$minElement = $element;
+		}
+	}
+	
+	return $minElement;
+}
+
+/**
+ * Function: maxBy
+ * =============================================================================
+ * Finds the largest element by result of $callback
+ * 
+ * 	MaxBy([&#039;tasty&#039;, &#039;big&#039;, &#039;cheeseburgers&#039;], &#039;mb_strlen&#039;); //=&gt; &#039;cheeseburgers&#039;
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array -
+ * $callback - callable($value, $key) -&gt; number|string
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * mixed
+ */
+function maxBy($array, $callback)
+{
+	$maxResult = null;
+	$maxElement = null;
+	
+	foreach ($array as $element)
+	{
+		$current = $callback($element);
+		if (!isset($maxResult) || $current &gt; $maxResult)
+		{
+			$maxResult = $current;
+			$maxElement = $element;
+		}
+	}
+	
+	return $maxElement;
+}
+
+/**
+ * Function: sumBy
+ * =============================================================================
+ * Returns the sum of all elements passed through $callback
+ * 
+ * 	SumBy([&#039;tasty&#039;, &#039;big&#039;, &#039;cheeseburgers&#039;], &#039;mb_strlen&#039;); // =&gt; 21
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array -
+ * $callback - callable($value, $key) -&gt; number
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * int
+ */
+function sumBy($array, $callback)
+{
+	$sum = 0;
+	
+	foreach ($array as $value)
+	{
+		$sum += $callback($value);
+	}
+	
+	return $sum;
+}
+
+/**
+ * Function: partition
+ * =============================================================================
+ * Returns two arrays: one with elements that satisfy the predicate,
+ * the other with elements that don&#039;t
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array - 
+ * $predicate - 
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function partition($array, $predicate)
+{
+	$pass = array();
+	$fail = array();
+	
+	foreach ($array as $key =&gt; $value)
+	{
+		$predicate($value, $key)
+			? $pass[$key] = $value
+			: $fail[$key] = $value;
+	}
+	
+	return array($pass, $fail);
+}
+
+/**
+ * Function: zip
+ * =============================================================================
+ * Zips together two or more arrays.
+ * 
+ * 	Zip(range(1, 5), range(&#039;a&#039;, &#039;e&#039;), [5, 4, 3, 2, 1]);
+ * 	//=&gt; [[1, a, 5], [2, b, 4], [3, c, 3], [4, d, 2], [5, e, 1]]
+ * 
+ * Parameters:
+ * -----------------------------------------------------------------------------
+ * $array1 -
+ * $array2 - 
+ * 
+ * Returns:
+ * -----------------------------------------------------------------------------
+ * array
+ */
+function zip()
+{
+	$args = func_get_args();
+	array_unshift($args, null);
+	return call_user_func_array(&#039;array_map&#039;, $args);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// SECTION: Laravel Stubs
+// =============================================================================
+// The following functions are just stubs for methods of the class:
+// 
+//     \Illuminate\Support\Arr
+// 
+// They are here to simply provide continuity between the
+// Fluent API, Static Method API and Function API.
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Add an element to an array using &quot;dot&quot; notation if it doesn&#039;t exist.
+ *
+ * @param  array   $array
+ * @param  string  $key
+ * @param  mixed   $value
+ * @return array
+ */
+function add($array, $key, $value)
+{
+	return Arr::add($array, $key, $value);
+}
+
+/**
+ * Build a new array using a callback.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @return array
+ */
+function build($array, Closure $callback)
+{
+	return Arr::build($array, $callback);
+}
+
+/**
+ * Divide an array into two arrays. One with keys and the other with values.
+ *
+ * @param  array  $array
+ * @return array
+ */
+function divide($array)
+{
+	return Arr::divide($array);
+}
+
+/**
+ * Flatten a multi-dimensional associative array with dots.
+ *
+ * @param  array   $array
+ * @param  string  $prepend
+ * @return array
+ */
+function dot($array, $prepend = &#039;&#039;)
+{
+	return Arr::dot($array, $prepend);
+}
+
+/**
+ * Get all of the given array except for a specified array of items.
+ *
+ * @param  array  $array
+ * @param  array|string  $keys
+ * @return array
+ */
+function except($array, $keys)
+{
+	return Arr::except($array, $keys);
+}
+
+/**
+ * Fetch a flattened array of a nested array element.
+ *
+ * @param  array   $array
+ * @param  string  $key
+ * @return array
+ */
+function fetch($array, $key)
+{
+	return Arr::fetch($array, $key);
+}
+
+/**
+ * Return the first element in an array passing a given truth test.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @param  mixed     $default
+ * @return mixed
+ */
+function first($array, $callback, $default = null)
+{
+	return Arr::first($array, $callback, $default);
+}
+
+/**
+ * Return the last element in an array passing a given truth test.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @param  mixed     $default
+ * @return mixed
+ */
+function last($array, $callback, $default = null)
+{
+	return Arr::last($array, $callback, $default);
+}
+
+/**
+ * Flatten a multi-dimensional array into a single level.
+ *
+ * @param  array  $array
+ * @return array
+ */
+function flatten($array)
+{
+	return Arr::flatten($array);
+}
+
+/**
+ * Remove one or many array items from a given array using &quot;dot&quot; notation.
+ *
+ * @param  array  $array
+ * @param  array|string  $keys
+ * @return void
+ */
+function forget(&amp;$array, $keys)
+{
+	return Arr::forget($array, $keys);
+}
+
+/**
+ * Get an item from an array using &quot;dot&quot; notation.
+ *
+ * @param  array   $array
+ * @param  string  $key
+ * @param  mixed   $default
+ * @return mixed
+ */
+function get($array, $key, $default = null)
+{
+	return Arr::get($array, $key, $default);
+}
+
+/**
+ * Get a subset of the items from the given array.
+ *
+ * @param  array  $array
+ * @param  array|string  $keys
+ * @return array
+ */
+function only($array, $keys)
+{
+	return Arr::only($array, $keys);
+}
+
+/**
+ * Pluck an array of values from an array.
+ *
+ * @param  array   $array
+ * @param  string  $value
+ * @param  string  $key
+ * @return array
+ */
+function pluck($array, $value, $key = null)
+{
+	return Arr::pluck($array, $value, $key);
+}
+
+/**
+ * Get a value from the array, and remove it.
+ *
+ * @param  array   $array
+ * @param  string  $key
+ * @param  mixed   $default
+ * @return mixed
+ */
+function pull(&amp;$array, $key, $default = null)
+{
+	return Arr::pull($array, $key, $default);
+}
+
+/**
+ * Set an array item to a given value using &quot;dot&quot; notation.
+ *
+ * If no key is given to the method, the entire array will be replaced.
+ *
+ * @param  array   $array
+ * @param  string  $key
+ * @param  mixed   $value
+ * @return array
+ */
+function set(&amp;$array, $key, $value)
+{
+	return Arr::set($array, $key, $value);
+}
+
+/**
+ * Sort the array using the given Closure.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @return array
+ */
+function sort($array, Closure $callback)
+{
+	return Arr::sort($array, $callback);
+}
+
+/**
+ * Filter the array using the given Closure.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @return array
+ */
+function where($array, Closure $callback)
+{
+	return Arr::where($array, $callback);
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"..\/src\/Functions.html","string\/src\/String.php":"..\/src\/String.html","arrays\/src\/Functions.php":"#","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"Arrays\/Fluent.html","arrays\/src\/Arrays.php":"Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/src\/String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

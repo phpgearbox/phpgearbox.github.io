@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			di/src/Container.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: reflector
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="23"
+								data-end-line="28"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $reflector;</code></pre>
+										
+<p>In some cases we can save some memory by saving an instance
+of <code>ReflectionProperty</code> and reusing it later on.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: factories
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="31"
+								data-end-line="37"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $factories;</code></pre>
+										
+<p>This will contain a list of closures in the container that we want to
+protect from being replaced by their output. We do this by using a
+<code>SplObjectStorage</code> object.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: protected
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="40"
+								data-end-line="46"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $protected;</code></pre>
+										
+<p>This will contain a list of closures in the container that we want to
+protect from being resolved. They will be treated like any other
+primitive type. We do this by using a <code>SplObjectStorage</code> object.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-success">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Property: frozen
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="49"
+								data-end-line="55"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected $frozen = [];</code></pre>
+										
+<p>When a service has been resolved. ie: Someone either inside or outside
+of the container has access the service we mark it as frozen.
+This is so that it can not be over ridden.</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __construct
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="58"
+								data-end-line="72"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __construct($config = [])</code></pre>
+										
+<p>Lets construct the container.</p>
+<p>All we do here is set some defaults and inject any custom services.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$config: An array of values to inject into the container.</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetExists
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="92"
+								data-end-line="104"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetExists($offset)</code></pre>
+										
+<p>Implements <code>ArrayAccess</code>.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$offset: The offset to check to see if it exists.</li>
+</ul>
+<h2>Returns:</h2>
+<p>bool</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetGet
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="137"
+								data-end-line="149"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetGet ($offset)</code></pre>
+										
+<p>Implements <code>ArrayAccess</code>.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$offset: The offset to get out of the container.</li>
+</ul>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetSet
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="208"
+								data-end-line="220"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetSet($offset, $value)</code></pre>
+										
+<p>Implements <code>ArrayAccess</code>.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$offset: The offset to set in the container.</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetUnset
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="238"
+								data-end-line="255"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetUnset($offset)</code></pre>
+										
+<p>Implements <code>ArrayAccess</code>.</p>
+<p>Not implemented on purpose.
+Once a dependency has been injected it can not be un-injected.
+You have to replace it with something new that will do the job.
+Or ummm... mock the job if Unit Testing :)</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$offset: does nothing</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __get
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="261"
+								data-end-line="273"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __get($name)</code></pre>
+										
+<p>PHP Magic Method, provides object syntax to resolve services.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$name: The name of service to resolve out of the container.</li>
+</ul>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __set
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="279"
+								data-end-line="292"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __set($name, $value)</code></pre>
+										
+<p>PHP Magic Method, provides object syntax to inject services.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$name: The name of the service|attribute to inject into the container.</li>
+<li>$value: A closure if defining a service, otherwise any primitive type.</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_11" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: factory
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="305"
+								data-end-line="326"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function factory(Closure $callable)</code></pre>
+										
+<p>By default the container will resolve a service and save a copy for
+any later requests. However if your service needs to be re-initialised
+each time it is requested. Simply wrap it up in this method.</p>
+<p>For example:</p>
+<pre><code class="language-php">$c = new Container();
+$c-&gt;fooBarService = $c-&gt;factory(function(){ return new FooBar(); });</code></pre>
+<h2>Parameters:</h2>
+<ul>
+<li>$callable: The callable to define as a factory.</li>
+</ul>
+<h2>Returns:</h2>
+<p>Closure</p>
+				</div>
+			</div>
+
+					
+			<div id="block_12" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: protect
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="333"
+								data-end-line="357"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function protect(Closure $callable)</code></pre>
+										
+<p>By default the container will resolve a service and save a copy for
+any later requests. However if your service needs to be re-initialised
+each time it is requested. Simply wrap it up in this method.</p>
+<p>For example:</p>
+<pre><code class="language-php">$c = new Container();
+$c-&gt;protectedFunc = $c-&gt;protect(function($a, $b){ return $a+$b; });</code></pre>
+<blockquote>
+<p>NOTE: That the Closure will not be bound to the container.
+ie: $this is not available.</p>
+</blockquote>
+<h2>Parameters:</h2>
+<ul>
+<li>$callable: The callable to define as protected.</li>
+</ul>
+<h2>Returns:</h2>
+<p>Closure</p>
+				</div>
+			</div>
+
+					
+			<div id="block_13" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: register
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="364"
+								data-end-line="377"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function register(ServiceProviderInterface $provider, array $values = array())</code></pre>
+										
+<p>This will register a Service Provider into the Container.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>$provider: An instance of <code>ServiceProviderInterface</code>.</li>
+<li>$values: An array of values that customizes the provider.</li>
+</ul>
+<h2>Returns:</h2>
+<p>Closure</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Property: reflector
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Property: factories
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Property: protected
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Property: frozen
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Method: __construct
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Method: offsetExists
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Method: offsetGet
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Method: offsetSet
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Method: offsetUnset
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Method: __get
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Method: __set
+					</a>
+																<a class="list-group-item" data-block-target="#block_11">
+						Method: factory
+					</a>
+																<a class="list-group-item" data-block-target="#block_12">
+						Method: protect
+					</a>
+																<a class="list-group-item" data-block-target="#block_13">
+						Method: register
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						di/src/Container.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\Di;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use Closure;
+use ArrayAccess;
+use SplObjectStorage;
+use ReflectionProperty;
+use ReflectionException;
+use RuntimeException;
+
+class Container implements ArrayAccess
+{
+	/**
+	 * Property: reflector
+	 * =========================================================================
+	 * In some cases we can save some memory by saving an instance
+	 * of ```ReflectionProperty``` and reusing it later on.
+	 */
+	protected $reflector;
+
+	/**
+	 * Property: factories
+	 * =========================================================================
+	 * This will contain a list of closures in the container that we want to
+	 * protect from being replaced by their output. We do this by using a
+	 * ```SplObjectStorage``` object.
+	 */
+	protected $factories;
+
+	/**
+	 * Property: protected
+	 * =========================================================================
+	 * This will contain a list of closures in the container that we want to
+	 * protect from being resolved. They will be treated like any other
+	 * primitive type. We do this by using a ```SplObjectStorage``` object.
+	 */
+	protected $protected;
+
+	/**
+	 * Property: frozen
+	 * =========================================================================
+	 * When a service has been resolved. ie: Someone either inside or outside
+	 * of the container has access the service we mark it as frozen.
+	 * This is so that it can not be over ridden.
+	 */
+	protected $frozen = [];
+
+	/**
+	 * Method: __construct
+	 * =========================================================================
+	 * Lets construct the container.
+	 * 
+	 * All we do here is set some defaults and inject any custom services.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $config: An array of values to inject into the container.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function __construct($config = [])
+	{
+		// Initialise some object storage
+		$this-&gt;factories = new SplObjectStorage();
+		$this-&gt;protected = new SplObjectStorage();
+
+		// Set some defaults
+		if (method_exists($this, &#039;setDefaults&#039;))
+		{
+			$this-&gt;setDefaults();
+		}
+
+		// Loop through our injected config array and set custom values.
+		foreach ($config as $key =&gt; $value)
+		{
+			$this[$key] = $value;
+		}
+	}
+
+	/**
+	 * Method: offsetExists
+	 * =========================================================================
+	 * Implements ```ArrayAccess```.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $offset: The offset to check to see if it exists.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * bool
+	 */
+	public function offsetExists($offset)
+	{
+		// All injectable properties must be prefixed with &#039;inject&#039;
+		$offset = &#039;inject&#039;.ucfirst($offset);
+
+		// Lets see if the property exists
+		try
+		{
+			// Save the reflector so that we don&#039;t have to create new ones.
+			$this-&gt;reflector = new ReflectionProperty($this, $offset);
+		}
+		catch (ReflectionException $e)
+		{
+			return false;
+		}
+
+		// Regardless of if the property is prefixed with &#039;inject&#039;
+		// we want to make sure private stuff stays private.
+		if (!$this-&gt;reflector-&gt;isPrivate())
+		{
+			// After we return true here, we will most likely need to
+			// access this property. So may as well do it once here.
+			$this-&gt;reflector-&gt;setAccessible(true);
+			return true;
+		}
+		else
+		{
+			// Bail Out
+			throw new RuntimeException(&#039;You cant touch my privates!!!&#039;);
+		}
+	}
+
+	/**
+	 * Method: offsetGet
+	 * =========================================================================
+	 * Implements ```ArrayAccess```.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $offset: The offset to get out of the container.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function offsetGet ($offset)
+	{
+		// Make sure the property exists
+		if ($this-&gt;offsetExists($offset))
+		{
+			// Grab its current value
+			$value = $this-&gt;reflector-&gt;getValue($this);
+
+			// If the value is a closure we need to resolve it.
+			if ($value instanceof Closure)
+			{
+				// Rebind the closure to the container.
+				// This allows the closure to use the $this var.
+				$bound = Closure::bind($value, $this, &#039;\Gears\Di\Container&#039;);
+
+				// If its not a factory and it&#039;s not protected we can resolve it
+				if (!$this-&gt;factories-&gt;contains($value) &amp;&amp; !$this-&gt;protected-&gt;contains($value))
+				{
+					// Save the current reflector as calling
+					// the closure could be recursive.
+					$r = $this-&gt;reflector;
+
+					// Run the closure
+					$output = $bound();
+
+					// Save it for later use
+					$r-&gt;setValue($this, $output);
+
+					// Once a service has been resolved thats it no more
+					// changes as other services now depend on this.
+					$this-&gt;frozen[$offset] = true;
+				}
+				elseif ($this-&gt;factories-&gt;contains($value))
+				{
+					// Run the factory but don&#039;t save it&#039;s output
+					$output = $bound();
+				}
+				else
+				{
+					// It must be a protected closure
+					$output = $bound;
+				}
+			}
+			else
+			{
+				// The value has already been resolved
+				// or it just a primitive type.
+				$output = $value;
+			}
+
+			return $output;
+		}
+		else
+		{
+			throw new RuntimeException(&#039;Container does not contain: &#039;.$offset);
+		}
+	}
+
+	/**
+	 * Method: offsetSet
+	 * =========================================================================
+	 * Implements ```ArrayAccess```.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $offset: The offset to set in the container.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function offsetSet($offset, $value)
+	{
+		if (isset($this-&gt;frozen[$offset]))
+		{
+			throw new RuntimeException(&#039;Cannot override frozen service: &#039;.$offset);
+		}
+
+		if ($this-&gt;offsetExists($offset))
+		{
+			$this-&gt;reflector-&gt;setValue($this, $value);
+		}
+		else
+		{
+			$this-&gt;{&#039;inject&#039;.ucfirst($offset)} = $value;
+		}
+	}
+
+	/**
+	 * Method: offsetUnset
+	 * =========================================================================
+	 * Implements ```ArrayAccess```.
+	 * 
+	 * Not implemented on purpose.
+	 * Once a dependency has been injected it can not be un-injected.
+	 * You have to replace it with something new that will do the job.
+	 * Or ummm... mock the job if Unit Testing :)
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $offset: does nothing
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function offsetUnset($offset)
+	{		
+		throw new RuntimeException(&#039;You can not unset a dependency!&#039;);
+	}
+
+	/**
+	 * Method: __get
+	 * =========================================================================
+	 * PHP Magic Method, provides object syntax to resolve services.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $name: The name of service to resolve out of the container.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function __get($name)
+	{
+		return $this-&gt;offsetGet($name);
+	}
+
+	/**
+	 * Method: __set
+	 * =========================================================================
+	 * PHP Magic Method, provides object syntax to inject services.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $name: The name of the service|attribute to inject into the container.
+	 * - $value: A closure if defining a service, otherwise any primitive type.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function __set($name, $value)
+	{
+		if (substr($name, 0, 6) == &#039;inject&#039;)
+		{
+			$this-&gt;{$name} = $value;
+		}
+		else
+		{
+			$this-&gt;offsetSet($name, $value);
+		}
+	}
+
+	/**
+	 * Method: factory
+	 * =========================================================================
+	 * By default the container will resolve a service and save a copy for
+	 * any later requests. However if your service needs to be re-initialised
+	 * each time it is requested. Simply wrap it up in this method.
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $c = new Container();
+	 * $c-&gt;fooBarService = $c-&gt;factory(function(){ return new FooBar(); });
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $callable: The callable to define as a factory.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * Closure
+	 */
+	public function factory(Closure $callable)
+	{
+		$this-&gt;factories-&gt;attach($callable);
+		return $callable;
+	}
+
+	/**
+	 * Method: protect
+	 * =========================================================================
+	 * By default the container will resolve a service and save a copy for
+	 * any later requests. However if your service needs to be re-initialised
+	 * each time it is requested. Simply wrap it up in this method.
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $c = new Container();
+	 * $c-&gt;protectedFunc = $c-&gt;protect(function($a, $b){ return $a+$b; });
+	 * ```
+	 * 
+	 * &gt; NOTE: That the Closure will not be bound to the container.
+	 * &gt; ie: $this is not available.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $callable: The callable to define as protected.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * Closure
+	 */
+	public function protect(Closure $callable)
+	{
+		$this-&gt;protected-&gt;attach($callable);
+		return $callable;
+	}
+
+	/**
+	 * Method: register
+	 * =========================================================================
+	 * This will register a Service Provider into the Container.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * - $provider: An instance of ```ServiceProviderInterface```.
+	 * - $values: An array of values that customizes the provider.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * Closure
+	 */
+	public function register(ServiceProviderInterface $provider, array $values = array())
+	{
+		$provider-&gt;register($this);
+
+		foreach ($values as $key =&gt; $value)
+		{
+			$this[$key] = $value;
+		}
+
+		return $this;
+	}
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"#","di\/src\/ServiceProviderInterface.php":"ServiceProviderInterface.html","di\/Example.md":"..\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"..\/src\/Functions.html","string\/src\/String.php":"..\/src\/String.html","arrays\/src\/Functions.php":"..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/src\/String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/src\/Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/src\/Arrays.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

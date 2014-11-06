@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			arrays/src/Arrays/Fluent.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: convert
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="20"
+								data-end-line="40"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function convert($arg1, $arg2 = null, $arg3 = array())</code></pre>
+										
+<p>This is a convenience front end to our conversion classes.</p>
+<h2>Parameters:</h2>
+<p>This method uses some smart dynamic parameters matching.
+Best shown with an example:</p>
+<pre><code class="language-php">Arr::a([1,2,3])-&gt;convert('csv') // 1,2,3
+Arr::a()-&gt;convert('1,2,3', 'csv') // array(1,2,3)
+Arr::a([1,2,3])-&gt;convert('csv', ['delimiter' =&gt; "-"]) // 1-2-3
+Arr::a()-&gt;convert('1-2-3', 'csv', ['delimiter' =&gt; "-"]) // array(1,2,3)</code></pre>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: get
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="74"
+								data-end-line="94"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function get($key, $default = null)</code></pre>
+										
+<p>Get an item from the collection by key.</p>
+<p>For example:</p>
+<pre><code class="language-php">$data = Arr::a(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]]);
+echo $data-&gt;get('a.b.c'); // outputs: d</code></pre>
+<h2>Parameters:</h2>
+<p>$key - Can be a single key, "dot" separated keys or an array of keys.
+$default - What value would you like to have returned on failure?</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: set
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="141"
+								data-end-line="165"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function set($key, $value)</code></pre>
+										
+<p>Set an item on the collection by key.</p>
+<p>For example:</p>
+<pre><code class="language-php">$data = Arr::a();
+$data-&gt;set('a.b.c', 'd');
+echo $data-&gt;a-&gt;b-&gt;c; // outputs: d</code></pre>
+<p>NOTE: If no key is given to the method, the entire array will be
+replaced. This is in keeping with the procedual version of this method.</p>
+<h2>Parameters:</h2>
+<p>$key - Can be a single key, "dot" separated keys or an array of keys.
+$value - The value to set on the collection.</p>
+<h2>Returns:</h2>
+<p>static</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: add
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="213"
+								data-end-line="234"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function add($key, $value = null)</code></pre>
+										
+<p>Add an item to the collection by key, if it doesn't exist.</p>
+<p>For example:</p>
+<pre><code class="language-php">$data = Arr::a(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]]);
+$data-&gt;add('a', '123'); // fails
+$data-&gt;add('z', '123'); // works</code></pre>
+<h2>Parameters:</h2>
+<p>$key - Can be a single key, "dot" separated keys or an array of keys.
+$value - The value to set on the collection.</p>
+<h2>Returns:</h2>
+<p>static</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: offsetGet
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="252"
+								data-end-line="289"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function offsetGet($key)</code></pre>
+										
+<p>Returns the value at specified offset.
+See: <a href="http://php.net/manual/en/class.arrayaccess.php" target="_blank">http://php.net/manual/en/class.arrayaccess.php</a></p>
+<p>We have overloaded the <code>\Illuminate\Support\Collection</code>
+version so that we can provide a recursive interface.*</p>
+<p>For example:</p>
+<pre><code class="language-php">$data = Arr:a([[1,2,3]]);
+print_r($data[0]);</code></pre>
+<p>Results in:</p>
+<pre><code>Gears\Arrays\Fluent Object
+(
+        [items:protected] =&gt; Array
+        (
+            [0] =&gt; 1,
+            [1] =&gt; 2,
+            [2] =&gt; 3
+        )
+)</code></pre>
+<h2>Parameters:</h2>
+<p>$key - The key of the underlying array to retrive.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: getIterator
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="299"
+								data-end-line="338"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function getIterator()</code></pre>
+										
+<p>This returns an array iterator so foreach works on our array like object.
+See: <a href="http://php.net/manual/en/class.iteratoraggregate.php" target="_blank">http://php.net/manual/en/class.iteratoraggregate.php</a></p>
+<p>We have overloaded the <code>\Illuminate\Support\Collection</code>
+version so that we can provide a recursive interface.*</p>
+<p>For example:</p>
+<pre><code class="language-php">foreach (Arr::a([[1,2,3]]) as $item)
+{
+    print_r($item);
+}</code></pre>
+<p>Results in:</p>
+<pre><code>Gears\Arrays\Fluent Object
+(
+        [items:protected] =&gt; Array
+        (
+            [0] =&gt; 1,
+            [1] =&gt; 2,
+            [2] =&gt; 3
+        )
+)</code></pre>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>\Gears\Arrays\Iterator</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __set
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="344"
+								data-end-line="378"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __set($name, $value)</code></pre>
+										
+<p>This is a PHP Magic Method.
+See: <a href="http://php.net/manual/en/language.oop5.magic.php" target="_blank">http://php.net/manual/en/language.oop5.magic.php</a></p>
+<p>This enables the object access syntax:</p>
+<pre><code class="language-php">$data = Arr::a();
+$data-&gt;foo = 'bar';
+print_r($data);</code></pre>
+<p>The results of the above look like:</p>
+<pre><code>Gears\Arrays\Fluent Object
+(
+        [items:protected] =&gt; Array
+        (
+            'foo' =&gt; 'bar'
+        )
+)</code></pre>
+<h2>Parameters:</h2>
+<p>$name - The name or key of the item to set on the underlying array.
+$value - The value toi set on the underlying array.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_7" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __get
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="384"
+								data-end-line="404"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __get($name)</code></pre>
+										
+<p>This is a PHP Magic Method.
+See: <a href="http://php.net/manual/en/language.oop5.magic.php" target="_blank">http://php.net/manual/en/language.oop5.magic.php</a></p>
+<p>This enables the object access syntax:</p>
+<pre><code class="language-php">$data = Arr::a(['foo' =&gt; 'bar']);
+echo $data-&gt;foo; // Outputs: bar</code></pre>
+<h2>Parameters:</h2>
+<p>$name - The name or key of the item to get from the underlying array.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_8" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __isset
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="410"
+								data-end-line="431"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __isset($name)</code></pre>
+										
+<p>This is a PHP Magic Method.
+See: <a href="http://php.net/manual/en/language.oop5.magic.php" target="_blank">http://php.net/manual/en/language.oop5.magic.php</a></p>
+<p>This enables you to use isset() or empty() like so:</p>
+<pre><code class="language-php">$data = Arr::a(['foo' =&gt; 'bar']);
+isset($data-&gt;foo); // true
+isset($data-&gt;bar); // false</code></pre>
+<h2>Parameters:</h2>
+<p>$name - The name or key of the item to test on the underlying array.</p>
+<h2>Returns:</h2>
+<p>bool</p>
+				</div>
+			</div>
+
+					
+			<div id="block_9" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __unset
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="437"
+								data-end-line="459"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __unset($name)</code></pre>
+										
+<p>This is a PHP Magic Method.
+See: <a href="http://php.net/manual/en/language.oop5.magic.php" target="_blank">http://php.net/manual/en/language.oop5.magic.php</a></p>
+<p>This enables you to use unset() like so:</p>
+<pre><code class="language-php">$data = Arr::a(['foo' =&gt; 'bar']);
+isset($data-&gt;foo); // true
+unset($data-&gt;foo);
+isset($data-&gt;foo); // false</code></pre>
+<h2>Parameters:</h2>
+<p>$name - The name or key of the item to test on the underlying array.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_10" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __call
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="465"
+								data-end-line="490"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public function __call($name, $arguments)</code></pre>
+										
+<p>The existing methods in the <code>Illuminate\Support\Collection</code> class
+are awesome. But there are some extra methods we would like to have
+access to.</p>
+<p>This will first look for a function under our \Gears\Arrays
+namespace. If one is found we call that function for you, as if it
+were a method of this class.</p>
+<p>If we can't find a function there we then check for any macros that have
+been defined on the \Gears\Arrays class. Again running that for you
+automatically.</p>
+<p>On failure of all that we finally throw an InvalidMethod Exception.</p>
+<h2>Parameters:</h2>
+<p>$name - The name of the \Gears\Arrays\"FUNCTION" to call.
+$arguments - The arguments to pass to the function.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Method: convert
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Method: get
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Method: set
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Method: add
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Method: offsetGet
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Method: getIterator
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Method: __set
+					</a>
+																<a class="list-group-item" data-block-target="#block_7">
+						Method: __get
+					</a>
+																<a class="list-group-item" data-block-target="#block_8">
+						Method: __isset
+					</a>
+																<a class="list-group-item" data-block-target="#block_9">
+						Method: __unset
+					</a>
+																<a class="list-group-item" data-block-target="#block_10">
+						Method: __call
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						arrays/src/Arrays/Fluent.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\Arrays;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use \Illuminate\Support\Collection;
+use \Gears\Arrays\Iterator;
+use \Gears\Arrays\Exceptions\InvalidMethod;
+
+class Fluent extends Collection
+{
+	/**
+	 * Method: convert
+	 * =========================================================================
+	 * This is a convenience front end to our conversion classes.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * This method uses some smart dynamic parameters matching.
+	 * Best shown with an example:
+	 *
+	 * ```php
+	 * Arr::a([1,2,3])-&gt;convert(&#039;csv&#039;) // 1,2,3
+	 * Arr::a()-&gt;convert(&#039;1,2,3&#039;, &#039;csv&#039;) // array(1,2,3)
+	 * Arr::a([1,2,3])-&gt;convert(&#039;csv&#039;, [&#039;delimiter&#039; =&gt; &quot;-&quot;]) // 1-2-3
+	 * Arr::a()-&gt;convert(&#039;1-2-3&#039;, &#039;csv&#039;, [&#039;delimiter&#039; =&gt; &quot;-&quot;]) // array(1,2,3)
+	 * ```
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function convert($arg1, $arg2 = null, $arg3 = array())
+	{
+		// Create the converter class names
+		if (is_null($arg2) || is_array($arg2))
+		{
+			$converter = &#039;\Gears\Arrays\Conversions\To\\&#039;.ucfirst($arg1);
+			$data = $this-&gt;items;
+			$options = $arg2;
+		}
+		else
+		{
+			$converter = &#039;\Gears\Arrays\Conversions\From\\&#039;.ucfirst($arg2);
+			$data = $arg1;
+			$options = $arg3;
+		}
+
+		// Initiate a new converter
+		$converter =  new $converter($options);
+
+		// Run the conversion
+		$results = $converter-&gt;Convert($data);
+
+		// Return a new version of ourself if the result is an array
+		if (is_array($results))
+		{
+			return new static($results);
+		}
+		else
+		{
+			return $results;
+		}
+	}
+
+	/**
+	 * Method: get
+	 * =========================================================================
+	 * Get an item from the collection by key.
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $data = Arr::a([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]]);
+	 * echo $data-&gt;get(&#039;a.b.c&#039;); // outputs: d
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $default - What value would you like to have returned on failure?
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function get($key, $default = null)
+	{
+		// Get the keys array
+		if (is_string($key))
+		{
+			// We found the key in the root of the array
+			if ($this-&gt;offsetExists($key))
+			{
+				return $this-&gt;offsetGet($key);
+			}
+
+			$keys = explode(&#039;.&#039;, $key);
+		}
+		elseif (isArrayLike($key))
+		{
+			$keys = $key;
+		}
+		else
+		{
+			// Bail Out - we need a key
+			// NOTE: value()_is a laravel helper
+			return value($default);
+		}
+
+		// Start searching in the root of the array
+		$array = $this-&gt;items;
+
+		// Loop through the keys
+		foreach ($keys as $key)
+		{
+			// Check to see if the key exists
+			if (!isArrayLike($array) || !array_key_exists($key, $array))
+			{
+				// Bail out and return the default.
+				// NOTE: value() is a laravel helper.
+				return value($default);
+			}
+
+			// Keep recursing into the array
+			$array = $array[$key];
+		}
+		
+		// Return the value
+		return $array;
+	}
+
+	/**
+	 * Method: set
+	 * =========================================================================
+	 * Set an item on the collection by key.
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $data = Arr::a();
+	 * $data-&gt;set(&#039;a.b.c&#039;, &#039;d&#039;);
+	 * echo $data-&gt;a-&gt;b-&gt;c; // outputs: d
+	 * ```
+	 * 
+	 * NOTE: If no key is given to the method, the entire array will be
+	 * replaced. This is in keeping with the procedual version of this method.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $value - The value to set on the collection.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * static
+	 */
+	public function set($key, $value)
+	{
+		// Get the keys array
+		if (is_string($key))
+		{
+			$keys = explode(&#039;.&#039;, $key);
+		}
+		elseif (isArrayLike($key))
+		{
+			$keys = $key;
+		}
+		else
+		{
+			// Assume key not provided, replace entire array with new value.
+			$this-&gt;items = (array) $value;
+			return $this;
+		}
+
+		// Start in the root of the array
+		$array =&amp; $this-&gt;items;
+
+		// Loop through the keys
+		while (count($keys) &gt; 1)
+		{
+			// Get the next key
+			$key = array_shift($keys);
+
+			// If the key doesn&#039;t exist at this depth, we will just create an
+			// empty array to hold the next value, allowing us to create the
+			// arrays to hold final values at the correct depth. Then we&#039;ll
+			// keep digging into the array.
+			if (!isset($array[$key]) || !isArrayLike($array[$key]))
+			{
+				$array[$key] = new static();
+			}
+
+			// Recurse into the array
+			$array =&amp; $array[$key];
+		}
+
+		// Set the new value
+		$array[array_shift($keys)] = $value;
+
+		// Return ourselves to allow method chaining
+		return $this;
+	}
+
+	/**
+	 * Method: add
+	 * =========================================================================
+	 * Add an item to the collection by key, if it doesn&#039;t exist.
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $data = Arr::a([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]]);
+	 * $data-&gt;add(&#039;a&#039;, &#039;123&#039;); // fails
+	 * $data-&gt;add(&#039;z&#039;, &#039;123&#039;); // works
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $value - The value to set on the collection.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * static
+	 */
+	public function add($key, $value = null)
+	{
+		if (is_null($value))
+		{
+			$this-&gt;offsetSet(null, $key);
+		}
+		else
+		{
+			if (is_null($this-&gt;get($key)))
+			{
+				$this-&gt;set($key, $value);
+			}
+		}
+
+		return $this;
+	}
+
+	/**
+	 * Method: offsetGet
+	 * =========================================================================
+	 * Returns the value at specified offset.
+	 * See: http://php.net/manual/en/class.arrayaccess.php
+	 * 
+	 * *We have overloaded the ```\Illuminate\Support\Collection```
+	 * version so that we can provide a recursive interface.*
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * $data = Arr:a([[1,2,3]]);
+	 * print_r($data[0]);
+	 * ```
+	 * 
+	 * Results in:
+	 * 
+	 * ```
+	 * Gears\Arrays\Fluent Object
+	 * (
+	 * 		[items:protected] =&gt; Array
+	 * 		(
+	 * 			[0] =&gt; 1,
+	 * 			[1] =&gt; 2,
+	 * 			[2] =&gt; 3
+	 * 		)
+	 * )
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $key - The key of the underlying array to retrive.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function offsetGet($key)
+	{
+		$value = parent::offsetGet($key);
+
+		if (is_array($value)) $this-&gt;offsetSet($key, new static($value));
+
+		return parent::offsetGet($key);
+	}
+
+	/**
+	 * Method: getIterator
+	 * =========================================================================
+	 * This returns an array iterator so foreach works on our array like object.
+	 * See: http://php.net/manual/en/class.iteratoraggregate.php
+	 * 
+	 * *We have overloaded the ```\Illuminate\Support\Collection```
+	 * version so that we can provide a recursive interface.*
+	 * 
+	 * For example:
+	 * 
+	 * ```php
+	 * foreach (Arr::a([[1,2,3]]) as $item)
+	 * {
+	 *  	print_r($item);
+	 * }
+	 * ```
+	 * 
+	 * Results in:
+	 * 
+	 * ```
+	 * Gears\Arrays\Fluent Object
+	 * (
+	 * 		[items:protected] =&gt; Array
+	 * 		(
+	 * 			[0] =&gt; 1,
+	 * 			[1] =&gt; 2,
+	 * 			[2] =&gt; 3
+	 * 		)
+	 * )
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * \Gears\Arrays\Iterator
+	 */
+	public function getIterator()
+	{
+		return new Iterator($this-&gt;items);
+	}
+
+	/**
+	 * Method: __set
+	 * =========================================================================
+	 * This is a PHP Magic Method.
+	 * See: http://php.net/manual/en/language.oop5.magic.php
+	 * 
+	 * This enables the object access syntax:
+	 * 
+	 * ```php
+	 * $data = Arr::a();
+	 * $data-&gt;foo = &#039;bar&#039;;
+	 * print_r($data);
+	 * ```
+	 * 
+	 * The results of the above look like:
+	 * 
+	 * ```
+	 * Gears\Arrays\Fluent Object
+	 * (
+	 * 		[items:protected] =&gt; Array
+	 * 		(
+	 * 			&#039;foo&#039; =&gt; &#039;bar&#039;
+	 * 		)
+	 * )
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name or key of the item to set on the underlying array.
+	 * $value - The value toi set on the underlying array.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function __set($name, $value)
+	{
+		$this-&gt;offsetSet($name, $value);
+	}
+
+	/**
+	 * Method: __get
+	 * =========================================================================
+	 * This is a PHP Magic Method.
+	 * See: http://php.net/manual/en/language.oop5.magic.php
+	 * 
+	 * This enables the object access syntax:
+	 * 
+	 * ```php
+	 * $data = Arr::a([&#039;foo&#039; =&gt; &#039;bar&#039;]);
+	 * echo $data-&gt;foo; // Outputs: bar
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name or key of the item to get from the underlying array.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function __get($name)
+	{
+		return $this-&gt;offsetGet($name);
+	}
+
+	/**
+	 * Method: __isset
+	 * =========================================================================
+	 * This is a PHP Magic Method.
+	 * See: http://php.net/manual/en/language.oop5.magic.php
+	 * 
+	 * This enables you to use isset() or empty() like so:
+	 * 
+	 * ```php
+	 * $data = Arr::a([&#039;foo&#039; =&gt; &#039;bar&#039;]);
+	 * isset($data-&gt;foo); // true
+	 * isset($data-&gt;bar); // false
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name or key of the item to test on the underlying array.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * bool
+	 */
+	public function __isset($name)
+	{
+		return $this-&gt;offsetExists($name);
+	}
+
+	/**
+	 * Method: __unset
+	 * =========================================================================
+	 * This is a PHP Magic Method.
+	 * See: http://php.net/manual/en/language.oop5.magic.php
+	 * 
+	 * This enables you to use unset() like so:
+	 * 
+	 * ```php
+	 * $data = Arr::a([&#039;foo&#039; =&gt; &#039;bar&#039;]);
+	 * isset($data-&gt;foo); // true
+	 * unset($data-&gt;foo);
+	 * isset($data-&gt;foo); // false
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name or key of the item to test on the underlying array.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public function __unset($name)
+	{
+		$this-&gt;offsetUnset($name);
+	}
+
+	/**
+	 * Method: __call
+	 * =========================================================================
+	 * The existing methods in the ```Illuminate\Support\Collection``` class
+	 * are awesome. But there are some extra methods we would like to have
+	 * access to.
+	 * 
+	 * This will first look for a function under our \Gears\Arrays
+	 * namespace. If one is found we call that function for you, as if it
+	 * were a method of this class.
+	 * 
+	 * If we can&#039;t find a function there we then check for any macros that have
+	 * been defined on the \Gears\Arrays class. Again running that for you
+	 * automatically.
+	 * 
+	 * On failure of all that we finally throw an InvalidMethod Exception.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name of the \Gears\Arrays\&quot;FUNCTION&quot; to call.
+	 * $arguments - The arguments to pass to the function.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public function __call($name, $arguments)
+	{
+		// Create the function name
+		$func_name = &#039;\Gears\Arrays\\&#039;.$name;
+
+		// Does the function exist
+		if (!function_exists($func_name))
+		{
+			// Try a macro
+			if (\Gears\Arrays::hasMacro($name))
+			{
+				// Just a reminder that macros can&#039;t have values
+				// passed by reference due to __callStatic.
+				$func_name = &#039;\Gears\Arrays::&#039;.$name;
+			}
+			else
+			{
+				// Bail out, we don&#039;t have a function to run
+				throw new InvalidMethod($name);
+			}
+		}
+
+		// Prepend the current items to the arguments
+		// Some functions require a reference to the array so we define it here.
+		$new_args = [&amp;$this-&gt;items];
+
+		foreach ($arguments as $arg)
+		{
+			// We also check for any arguments that might need
+			// to be transformed into an actual array. As most of
+			// the procedural functions expect real arrays and not
+			// ArrayLike objects.
+			if (isArrayLike($arg, true))
+			{
+				$new_args[] = $arg-&gt;toArray();
+			}
+			else
+			{
+				$new_args[] = $arg;
+			}
+		}
+
+		// Save the new arguments
+		$arguments = $new_args;
+
+		// Call the function
+		$result = call_user_func_array($func_name, $arguments);
+
+		if (empty($result))
+		{
+			// Nothing to return so just return the current instance.
+			// This probably means a function that acted on the array
+			// by reference ran.
+			return $this;
+		}
+		else
+		{
+			if (is_array($result))
+			{
+				// Return a new instance of ourselves with the new results.
+				return new static($result);
+			}
+			else
+			{
+				// Otherwise we just return the result from the function.
+				// This is now the end of our Gears\Array\Fluent object.
+				return $result;
+			}
+		}
+	}
+}
+</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/..\/di\/Example.html","session\/src\/Session.php":"..\/..\/src\/Session.html","string\/src\/Functions.php":"..\/..\/src\/Functions.html","string\/src\/String.php":"..\/..\/src\/String.html","arrays\/src\/Functions.php":"..\/..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"Iterator.html","arrays\/src\/Arrays\/Fluent.php":"#","arrays\/src\/Arrays.php":"arrays\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/..\/src\/Router.html","view\/src\/View.php":"..\/..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/..\/src\/Container.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/..\/src\/ServiceProviderInterface.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/..\/src\/Session.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/src\/Functions.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/..\/src\/String.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":true,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Conversions\/From\/Table.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Conversions\/From\/Json.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Conversions\/From\/Xml.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Conversions\/From\/Csv.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"Conversions\/From\/Lines.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"Conversions\/From\/Dom.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Conversions\/To\/Table.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Conversions\/To\/Json.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Conversions\/To\/Xml.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Conversions\/To\/Csv.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"Conversions\/Template.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"Iterator.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":true,"focus":true,"href":"#","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/src\/Functions.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"arrays\/src\/Arrays.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/..\/src\/Console\/Application.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/..\/src\/Generator.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/..\/src\/Router.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/..\/src\/View.html","icon":"..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../../assets/script.js"></script>
+	</body>
+</html>

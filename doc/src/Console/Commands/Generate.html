@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			doc/src/Console/Commands/Generate.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: configure
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="23"
+								data-end-line="35"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected function configure()</code></pre>
+										
+<p>The following describes our commands arguments and options.</p>
+<h2>Parameters:</h2>
+<p>n/a</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: execute
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="105"
+								data-end-line="120"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">protected function execute(InputInterface $input, OutputInterface $output)</code></pre>
+										
+<p>So this is where the magic happens.</p>
+<h2>Parameters:</h2>
+<ul>
+<li>
+<p>$input: This contains the commands input arguments and options, etc.</p>
+</li>
+<li>$output: This provides a means to output data back to the terminal
+is a structured manner.</li>
+</ul>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Method: configure
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Method: execute
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						doc/src/Console/Commands/Generate.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears\Doc\Console\Commands;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use Gears\Doc\Generator;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class Generate extends Command
+{
+	/**
+	 * Method: configure
+	 * =========================================================================
+	 * The following describes our commands arguments and options.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * n/a
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	protected function configure()
+	{
+		$this-&gt;setName(&#039;generate&#039;);
+
+		$this-&gt;addOption
+		(
+			&#039;name&#039;,
+			null,
+			InputOption::VALUE_REQUIRED,
+			&#039;A project name to use for the documentation site.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;input&#039;,
+			null,
+			InputOption::VALUE_REQUIRED,
+			&#039;The path of where your src files are located.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;ignore&#039;,
+			null,
+			InputOption::VALUE_REQUIRED|InputOption::VALUE_IS_ARRAY,
+			&#039;Path(s) to ignore in the input path.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;output&#039;,
+			null,
+			InputOption::VALUE_REQUIRED,
+			&#039;The path of where we will output the generated documentation.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;index&#039;,
+			null,
+			InputOption::VALUE_REQUIRED,
+			&#039;A document that we will use for the main index or home page.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;link&#039;,
+			null,
+			InputOption::VALUE_REQUIRED|InputOption::VALUE_IS_ARRAY,
+			&#039;Markdown link(s) to place in the header bar top right corner.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;ext&#039;,
+			null,
+			InputOption::VALUE_REQUIRED|InputOption::VALUE_IS_ARRAY,
+			&#039;Add more file extensions to be checked for doc blocks.&#039;
+		);
+
+		$this-&gt;addOption
+		(
+			&#039;additional-docs&#039;,
+			null,
+			InputOption::VALUE_REQUIRED,
+			&#039;A path to additional markdown documents to be merged into the site.&#039;
+		);
+	}
+
+	/**
+	 * Method: execute
+	 * =========================================================================
+	 * So this is where the magic happens.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 *  - $input: This contains the commands input arguments and options, etc.
+	 * 
+	 *  - $output: This provides a means to output data back to the terminal
+	 *             is a structured manner.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	protected function execute(InputInterface $input, OutputInterface $output)
+	{		
+		// First lets create ourselves a new generator object
+		$generator = new Generator();
+
+		// Set the project name
+		if (!empty($name = $input-&gt;getOption(&#039;name&#039;)))
+		{
+			$generator-&gt;projectName = $name;
+		}
+
+		// Set the input path
+		if (!empty($inputPath = $input-&gt;getOption(&#039;input&#039;)))
+		{
+			$generator-&gt;inputPath = $inputPath;
+		}
+
+		// Set the ignore paths
+		if (!empty($ignore = $input-&gt;getOption(&#039;ignore&#039;)))
+		{
+			$generator-&gt;ignorePaths = $ignore;
+		}
+
+		// Set the output path
+		if (!empty($outputPath = $input-&gt;getOption(&#039;output&#039;)))
+		{
+			$generator-&gt;outputPath = $outputPath;
+		}
+
+		// Set the index page
+		if (!empty($index = $input-&gt;getOption(&#039;index&#039;)))
+		{
+			$generator-&gt;indexPage = $index;
+		}
+
+		// Set the header links
+		if (!empty($links = $input-&gt;getOption(&#039;link&#039;)))
+		{
+			$generator-&gt;headerLinks = $links;
+		}
+
+		// Set the file extensions
+		if (!empty($exts = $input-&gt;getOption(&#039;ext&#039;)))
+		{
+			$generator-&gt;exts = array_merge
+			(
+				[&#039;php&#039;, &#039;js&#039;, &#039;css&#039;, &#039;less&#039;, &#039;sccs&#039;],
+				$exts
+			);
+		}
+
+		// Set the additional docs path
+		if (!empty($additional = $input-&gt;getOption(&#039;additional-docs&#039;)))
+		{
+			$generator-&gt;additionalMdDocuments = $additional;
+		}
+
+		// Finally run the generator
+		$generator-&gt;run();
+	}
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/..\/..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/..\/..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/..\/..\/di\/Example.html","session\/src\/Session.php":"..\/..\/..\/src\/Session.html","string\/src\/Functions.php":"..\/..\/..\/src\/Functions.html","string\/src\/String.php":"..\/..\/..\/src\/String.html","arrays\/src\/Functions.php":"..\/..\/..\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/..\/..\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/..\/..\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/..\/..\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/..\/..\/src\/Arrays.html","doc\/src\/Console\/Application.php":"..\/..\/..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"#","doc\/src\/Generator.php":"..\/..\/..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/..\/..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/..\/..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/..\/..\/src\/Router.html","view\/src\/View.php":"..\/..\/..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Container.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/..\/..\/src\/ServiceProviderInterface.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Session.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Functions.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/..\/..\/src\/String.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Conversions\/Template.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Iterator.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays\/Fluent.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Functions.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Arrays.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":true,"children":[{"title":"Commands","folder":true,"expanded":true,"children":[{"title":"Generate.php","active":true,"focus":true,"href":"#","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Console\/Application.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/..\/..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/..\/..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Generator.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/..\/..\/src\/Router.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/..\/..\/src\/View.html","icon":"..\/..\/..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../../../assets/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Doctor</title>
+		<link rel="stylesheet" href="../../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../../index.html">The Doctor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox/doc" target="_blank">GitHub</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			arrays/src/Arrays.php
+			<a class="view-source" title="View Source" data-toggle="modal" data-target="#sourceModal">
+				<i class="fa fa-file-code-o"></i>
+			</a>
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: a
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="20"
+								data-end-line="36"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function a(array $array = array())</code></pre>
+										
+<p>This is the static factory method allowing a syntax like this:</p>
+<pre><code class="language-php">Arr::a([1,2,3])-&gt;add(4)-&gt;each(function($v){ echo $v; });</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A PHP array to turn into a Gears\Arrays\Fluent object</p>
+<h2>Returns:</h2>
+<p>A new instance of Gears\Arrays\Fluent object</p>
+				</div>
+			</div>
+
+					
+			<div id="block_1" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: add
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="42"
+								data-end-line="65"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function add($array, $key, $value)</code></pre>
+										
+<p>We are overloading the parent add method so that we can accept
+either an array of keys or "dot" separated keys. This should stay
+compatiable with the upstream method.</p>
+<p>For example the following 2 calls are the same:</p>
+<pre><code class="language-php">Arr::add([], 'a.b.c', 'd');
+Arr::add([], ['a','b','c'], 'd');</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A PHP array to add items to.
+$key - Can be a single key, "dot" separated keys or an array of keys.
+$value - The value to set.</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_2" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: get
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="74"
+								data-end-line="97"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function get($array, $key, $default = null)</code></pre>
+										
+<p>We are overloading the parent get method so that we can accept
+either an array of keys or "dot" separated keys. This should stay
+compatiable with the upstream method.</p>
+<p>For example the following 2 calls are the same:</p>
+<pre><code class="language-php">Arr::get(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], 'a.b.c');
+Arr::get(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], ['a','b','c']);</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A PHP array to get items from.
+$key - Can be a single key, "dot" separated keys or an array of keys.
+$default - A value to return upon failure.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+					
+			<div id="block_3" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: set
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="106"
+								data-end-line="129"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function set(&amp;$array, $key, $value)</code></pre>
+										
+<p>We are overloading the parent set method so that we can accept
+either an array of keys or "dot" separated keys. This should stay
+compatiable with the upstream method.</p>
+<p>For example the following 2 calls are the same:</p>
+<pre><code class="language-php">Arr::set([], 'a.b.c', 'd');
+Arr::set([], ['a','b','c'], 'd');</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A refrence to the PHP array to set items in.
+$key - Can be a single key, "dot" separated keys or an array of keys.
+$value - The value to set.</p>
+<h2>Returns:</h2>
+<p>array</p>
+				</div>
+			</div>
+
+					
+			<div id="block_4" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: forget
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="138"
+								data-end-line="160"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function forget(&amp;$array, $keys)</code></pre>
+										
+<p>We are overloading the parent forget method so that we can accept
+either an array of keys or "dot" separated keys. This should stay
+compatiable with the upstream method.</p>
+<p>For example the following 2 calls are the same:</p>
+<pre><code class="language-php">Arr::forget(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], 'a.b.c');
+Arr::forget(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], ['a','b','c']);</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A refrence to the PHP array to remove items from.
+$keys - Can be a single key, "dot" separated keys or an array of keys.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_5" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: fetch
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="186"
+								data-end-line="208"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function fetch($array, $key)</code></pre>
+										
+<p>We are overloading the parent fetch method so that we can accept
+either an array of keys or "dot" separated keys. This should stay
+compatiable with the upstream method.</p>
+<p>For example the following 2 calls are the same:</p>
+<pre><code class="language-php">Arr::fetch(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], 'a.b.c');
+Arr::fetch(['a' =&gt; ['b' =&gt; ['c' =&gt; 'd']]], ['a','b','c']);</code></pre>
+<h2>Parameters:</h2>
+<p>$array - A refrence to the PHP array to remove items from.
+$keys - Can be a single key, "dot" separated keys or an array of keys.</p>
+<h2>Returns:</h2>
+<p>void</p>
+				</div>
+			</div>
+
+					
+			<div id="block_6" class="panel panel-default panel-info">
+									<div class="panel-heading">
+						<h3 class="panel-title">
+							Method: __callStatic
+							<a
+								class="view-source"
+								title="Take me to the code..."
+								data-start-line="217"
+								data-end-line="245"
+							>
+								<i class="fa fa-file-code-o"></i>
+							</a>
+						</h3>
+					</div>
+								<div class="panel-body">
+											<pre><code class="php">public static function __callStatic($name, $arguments)</code></pre>
+										
+<p>The existing methods in the <code>Illuminate\Support\Arr</code> class
+are awesome. But there are some extra methods we would like to have
+access to.</p>
+<p>This will first look for a function under our \Gears\Arrays
+namespace. If one is found we call that function for you, as if it
+were a static method of this class.</p>
+<p>If we can't find a function there we then check for any macros.
+If a macro exists we hand control to our parent.</p>
+<p>On failure of all that we finally throw an InvalidMethod Exception.</p>
+<p>NOTE: Any functions which require a reference to be passed through will
+not work via __callStatic. As the magic method does not accept
+references. These functions need to be defined in this class as stubs.</p>
+<h2>Parameters:</h2>
+<p>$name - The name of the \Gears\Arrays\"FUNCTION" to call.
+$arguments - The arguments to pass to the function.</p>
+<h2>Returns:</h2>
+<p>mixed</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+												<a class="list-group-item active" data-block-target="#block_0">
+						Method: a
+					</a>
+																<a class="list-group-item" data-block-target="#block_1">
+						Method: add
+					</a>
+																<a class="list-group-item" data-block-target="#block_2">
+						Method: get
+					</a>
+																<a class="list-group-item" data-block-target="#block_3">
+						Method: set
+					</a>
+																<a class="list-group-item" data-block-target="#block_4">
+						Method: forget
+					</a>
+																<a class="list-group-item" data-block-target="#block_5">
+						Method: fetch
+					</a>
+																<a class="list-group-item" data-block-target="#block_6">
+						Method: __callStatic
+					</a>
+									</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+	<div class="modal fade" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="sourceModalLabel">
+						arrays/src/Arrays.php
+					</h4>
+				</div>
+				<div class="modal-body">
+					<pre><code class="php">&lt;?php namespace Gears;
+////////////////////////////////////////////////////////////////////////////////
+// __________ __             ________                   __________              
+// \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
+//  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
+//  |    |   |   Y  \  |_&gt; &gt;    \_\  \  ___/ / __ \|  | \/    |   (  &lt;_&gt; &gt;    &lt; 
+//  |____|   |___|  /   __/ \______  /\___  &gt;____  /__|  |______  /\____/__/\_ \
+//                \/|__|           \/     \/     \/             \/            \/
+// -----------------------------------------------------------------------------
+//          Designed and Developed by Brad Jones &lt;brad @=&quot;bjc.id.au&quot; /&gt;         
+// -----------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
+
+use \Gears\Arrays\Fluent;
+use \Gears\Arrays\Exceptions\InvalidMethod;
+use \Illuminate\Support\Arr as LaravelArray;
+
+class Arrays extends LaravelArray
+{
+	/**
+	 * Method: a
+	 * =========================================================================
+	 * This is the static factory method allowing a syntax like this:
+	 * 
+	 * ```php
+	 * Arr::a([1,2,3])-&gt;add(4)-&gt;each(function($v){ echo $v; });
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A PHP array to turn into a Gears\Arrays\Fluent object
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * A new instance of Gears\Arrays\Fluent object
+	 */
+	public static function a(array $array = array())
+	{
+		return Fluent::make($array);
+	}
+
+	/**
+	 * Method: add
+	 * =========================================================================
+	 * We are overloading the parent add method so that we can accept
+	 * either an array of keys or &quot;dot&quot; separated keys. This should stay
+	 * compatiable with the upstream method.
+	 * 
+	 * For example the following 2 calls are the same:
+	 * 
+	 * ```php
+	 * Arr::add([], &#039;a.b.c&#039;, &#039;d&#039;);
+	 * Arr::add([], [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;], &#039;d&#039;);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A PHP array to add items to.
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $value - The value to set.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * array
+	 */
+	public static function add($array, $key, $value)
+	{
+		// this allows the key to be an array of keys
+		if (\Gears\Arrays\isArrayLike($key)) $key = implode(&#039;.&#039;, $key);
+
+		return parent::add($array, $key, $value);
+	}
+
+	/**
+	 * Method: get
+	 * =========================================================================
+	 * We are overloading the parent get method so that we can accept
+	 * either an array of keys or &quot;dot&quot; separated keys. This should stay
+	 * compatiable with the upstream method.
+	 * 
+	 * For example the following 2 calls are the same:
+	 * 
+	 * ```php
+	 * Arr::get([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], &#039;a.b.c&#039;);
+	 * Arr::get([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A PHP array to get items from.
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $default - A value to return upon failure.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public static function get($array, $key, $default = null)
+	{
+		// this allows the key to be an array of keys
+		if (\Gears\Arrays\isArrayLike($key)) $key = implode(&#039;.&#039;, $key);
+
+		return parent::get($array, $key, $default);
+	}
+
+	/**
+	 * Method: set
+	 * =========================================================================
+	 * We are overloading the parent set method so that we can accept
+	 * either an array of keys or &quot;dot&quot; separated keys. This should stay
+	 * compatiable with the upstream method.
+	 * 
+	 * For example the following 2 calls are the same:
+	 * 
+	 * ```php
+	 * Arr::set([], &#039;a.b.c&#039;, &#039;d&#039;);
+	 * Arr::set([], [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;], &#039;d&#039;);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A refrence to the PHP array to set items in.
+	 * $key - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * $value - The value to set.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * array
+	 */
+	public static function set(&amp;$array, $key, $value)
+	{
+		// this allows the key to be an array of keys
+		if (\Gears\Arrays\isArrayLike($key)) $key = implode(&#039;.&#039;, $key);
+
+		return parent::set($array, $key, $value);
+	}
+
+	/**
+	 * Method: forget
+	 * =========================================================================
+	 * We are overloading the parent forget method so that we can accept
+	 * either an array of keys or &quot;dot&quot; separated keys. This should stay
+	 * compatiable with the upstream method.
+	 * 
+	 * For example the following 2 calls are the same:
+	 * 
+	 * ```php
+	 * Arr::forget([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], &#039;a.b.c&#039;);
+	 * Arr::forget([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A refrence to the PHP array to remove items from.
+	 * $keys - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public static function forget(&amp;$array, $keys)
+	{
+		// this allows the key to be an array of keys
+		if (\Gears\Arrays\isArrayLike($keys))
+		{
+			$new_keys = [];
+
+			foreach ($keys as $key)
+			{
+				if (\Gears\Arrays\isArrayLike($key))
+				{
+					$new_keys[] = implode(&#039;.&#039;, $key);
+				}
+				else
+				{
+					$new_keys[] = $key;
+				}
+			}
+
+			$keys = $new_keys;
+		}
+
+		return parent::forget($array, $keys);
+	}
+
+	/**
+	 * Method: fetch
+	 * =========================================================================
+	 * We are overloading the parent fetch method so that we can accept
+	 * either an array of keys or &quot;dot&quot; separated keys. This should stay
+	 * compatiable with the upstream method.
+	 * 
+	 * For example the following 2 calls are the same:
+	 * 
+	 * ```php
+	 * Arr::fetch([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], &#039;a.b.c&#039;);
+	 * Arr::fetch([&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [&#039;c&#039; =&gt; &#039;d&#039;]]], [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]);
+	 * ```
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $array - A refrence to the PHP array to remove items from.
+	 * $keys - Can be a single key, &quot;dot&quot; separated keys or an array of keys.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * void
+	 */
+	public static function fetch($array, $key)
+	{
+		// this allows the key to be an array of keys
+		if (\Gears\Arrays\isArrayLike($key)) $key = implode(&#039;.&#039;, $key);
+
+		return parent::fetch($array, $key);
+	}
+
+	/**
+	 * Method: __callStatic
+	 * =========================================================================
+	 * The existing methods in the ```Illuminate\Support\Arr``` class
+	 * are awesome. But there are some extra methods we would like to have
+	 * access to.
+	 * 
+	 * This will first look for a function under our \Gears\Arrays
+	 * namespace. If one is found we call that function for you, as if it
+	 * were a static method of this class.
+	 * 
+	 * If we can&#039;t find a function there we then check for any macros.
+	 * If a macro exists we hand control to our parent.
+	 * 
+	 * On failure of all that we finally throw an InvalidMethod Exception.
+	 * 
+	 * NOTE: Any functions which require a reference to be passed through will
+	 * not work via __callStatic. As the magic method does not accept
+	 * references. These functions need to be defined in this class as stubs.
+	 * 
+	 * Parameters:
+	 * -------------------------------------------------------------------------
+	 * $name - The name of the \Gears\Arrays\&quot;FUNCTION&quot; to call.
+	 * $arguments - The arguments to pass to the function.
+	 * 
+	 * Returns:
+	 * -------------------------------------------------------------------------
+	 * mixed
+	 */
+	public static function __callStatic($name, $arguments)
+	{
+		// Create the function name
+		$func_name = &#039;\Gears\Arrays\\&#039;.$name;
+
+		// Does the function exist
+		if (!function_exists($func_name))
+		{
+			// Try a macro
+			if (self::hasMacro($name))
+			{
+				return parent::__callStatic($name, $arguments);
+			}
+
+			// Bail out, we don&#039;t have a function to run
+			throw new InvalidMethod($name);
+		}
+
+		// Call the function
+		return call_user_func_array($func_name, $arguments);
+	}
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/src\/ServiceProviderInterface.html","di\/Example.md":"..\/..\/di\/Example.html","session\/src\/Session.php":"..\/src\/Session.html","string\/src\/Functions.php":"..\/src\/Functions.html","string\/src\/String.php":"..\/src\/String.html","arrays\/src\/Functions.php":"Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"Arrays\/Fluent.html","arrays\/src\/Arrays.php":"#","doc\/src\/Console\/Application.php":"..\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/src\/Views\/assets\/js\/main.html","router\/src\/Router.php":"..\/src\/Router.html","view\/src\/View.php":"..\/src\/View.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/src\/Container.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/src\/ServiceProviderInterface.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Example.md","active":false,"focus":false,"href":"..\/..\/di\/Example.html","icon":null}]},{"title":"session","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Session.php","active":false,"focus":false,"href":"..\/src\/Session.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/src\/Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/src\/String.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"arrays","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Lines.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"Arrays\/Conversions\/From\/Dom.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Table.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Json.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Xml.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"Arrays\/Conversions\/To\/Csv.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"Arrays\/Conversions\/Template.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"Arrays\/Iterator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"Arrays\/Fluent.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"Functions.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":true,"focus":true,"href":"#","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/src\/Console\/Commands\/Generate.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/src\/Console\/Application.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/src\/Views\/assets\/css\/main.html","icon":"..\/..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/src\/Views\/assets\/js\/main.html","icon":"..\/..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/src\/Generator.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/src\/Router.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":true,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/src\/View.html","icon":"..\/..\/assets\/img\/silk\/page_white_php.png"}]}]}];
+		</script>
+		<script src="../../assets/script.js"></script>
+	</body>
+</html>

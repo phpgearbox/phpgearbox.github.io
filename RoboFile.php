@@ -17,15 +17,34 @@
  */
 require_once(__DIR__.'/vendor/autoload.php');
 
+use Symfony\Component\Finder\Finder;
+
 class RoboFile extends Robo\Tasks
 {
 	public function generateDocs()
 	{
+		// Copy all the READMEs into our additional docs folder
+		$finder = new Finder();
+		$dirs = $finder->directories()->in('./vendor/gears/')->depth('== 0');
+		foreach ($dirs as $dir)
+		{
+			$this->taskFileSystemStack()->copy
+			(
+				'./vendor/gears/'.$dir->getRelativePathname().'/README.md',
+				'./source/additional/'.$dir->getRelativePathname().'/README.md',
+				true
+			)->run();
+		}
+
+		// Generate the site
 		$this->taskExec('./vendor/bin/gearsdoc')
+			->option('name', 'phpGearBox')
 			->option('input', './vendor/gears')
 			->option('output', './output')
-			->option('index', './source/index.md')
+			->option('index', './source/index.html')
 			->option('additional-docs', './source/additional')
+			->option('link', '"[GitHub](https://github.com/phpgearbox)"')
+			->option('link', '"[Brad Jones](https://www.linkedin.com/in/bradjonescomputing)"')
 			->option('ignore', 'tests')
 			->option('ignore', 'RoboFile.php')
 			->option('ignore', 'fancytree.js')
@@ -33,6 +52,7 @@ class RoboFile extends Robo\Tasks
 			->option('ignore', 'jquery.js')
 		->run();
 
+		// Copy it into the root
 		$this->taskFileSystemStack()->mirror('./output', './')->run();
 	}
 }

@@ -1,6 +1,7 @@
 {
     "require": {
     	"codegyre/robo": "*",
+    	"symfony/finder": "2.*",
         "gears/doc": "*",
         "gears/arrays": "*",
         "gears/string": "*",

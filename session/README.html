@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>phpGearBox</title>
+		<link rel="stylesheet" href="../assets/style.css">
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">phpGearBox</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+									<li><a href="https://github.com/phpgearbox" target="_blank">GitHub</a></li>
+									<li><a href="https://www.linkedin.com/in/bradjonescomputing" target="_blank">Brad Jones</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-3 col-md-2 sidebar">
+	<form class="form-inline search" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="search-query">Search Query</label>
+			<input type="text" name="q" class="form-control" id="search-query" placeholder="Search...">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+	<div class="fancytree"></div>
+</div>
+				
+	<div class="col-md-6 col-md-offset-3 main">
+		
+		<h1 class="page-header">
+			session/README.md
+		</h1>
+		
+					
+			<div id="block_0" class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						The Session Gear
+					</h3>
+				</div>
+				<div class="panel-body">
+					
+<p><a href="https://travis-ci.org/phpgearbox/session" target="_blank"><img alt="Build Status" src="https://travis-ci.org/phpgearbox/session.svg?branch=master" /></a>
+<a href="https://packagist.org/packages/gears/session" target="_blank"><img alt="Latest Stable Version" src="https://poser.pugx.org/gears/session/v/stable.svg" /></a>
+<a href="https://packagist.org/packages/gears/session" target="_blank"><img alt="Total Downloads" src="https://poser.pugx.org/gears/session/downloads.svg" /></a>
+<a href="https://packagist.org/packages/gears/session" target="_blank"><img alt="License" src="https://poser.pugx.org/gears/session/license.svg" /></a></p>
+<p><strong>Laravel Sessions Standalone</strong></p>
+<p>Okay so by now hopefully you have heard of <a href="http://laravel.com/" target="_blank">Laravel</a>,
+the PHP framework that just makes things easy. So first things first full credit
+goes to <a href="https://github.com/taylorotwell" target="_blank">Taylor Otwell</a> for the Session API.</p>
+<h2>How to Install</h2>
+<p>Installation via composer is easy:</p>
+<pre><code>composer require gears/session:*</code></pre>
+<h2>How to Use</h2>
+<p>In your <em>legacy</em> - non Laravel application.
+You can use the Laravel Session API like so:</p>
+<pre><code class="language-php">// Make sure you have composer included
+require('vendor/autoload.php');
+
+// Create a new gears session.
+$session = new Gears\Session();
+
+// Configure the session container
+$session-&gt;dbConfig = 
+[
+    'driver'    =&gt; 'mysql',
+    'host'      =&gt; 'localhost',
+    'database'  =&gt; 'db_name',
+    'username'  =&gt; 'db_user',
+    'password'  =&gt; 'abc123',
+    'charset'   =&gt; 'utf8',
+    'collation' =&gt; 'utf8_unicode_ci',
+    'prefix'    =&gt; '',
+];
+
+// Install the session api
+$session-&gt;install();
+
+// Next you will probably want to make the session object global.
+$session-&gt;globalise();</code></pre>
+<blockquote>
+<p>NOTE: The dbConfig array must describe a valid db connection. This array is
+passed directly to $capsule->addConnection For more info on this see:</p>
+<ul>
+<li><a href="http://laravel.com/docs/database" target="_blank">http://laravel.com/docs/database</a></li>
+<li><a href="https://github.com/laravel/framework/tree/master/src/Illuminate/Database" target="_blank">https://github.com/laravel/framework/tree/master/src/Illuminate/Database</a></li>
+</ul>
+</blockquote>
+<p>Now you can use code like the following:</p>
+<pre><code class="language-php">// Storing An Item In The Session
+Session::put('key', 'value');
+
+// Push A Value Onto An Array Session Value
+Session::push('user.teams', 'developers');
+
+// Retrieving An Item From The Session
+$value = Session::get('key');
+
+// Retrieving An Item Or Returning A Default Value
+$value = Session::get('key', 'default');
+$value = Session::get('key', function() { return 'default'; });
+
+// Retrieving An Item And Forgetting It
+$value = Session::pull('key', 'default');
+
+// Retrieving All Data From The Session
+$data = Session::all();
+
+// Determining If An Item Exists In The Session
+if (Session::has('users'))
+{
+    //
+}
+
+// Removing An Item From The Session
+Session::forget('key');
+
+// Removing All Items From The Session
+Session::flush();
+
+// Regenerating The Session ID
+Session::regenerate();
+
+// Flashing Data
+Session::flash('key', 'value');
+
+// Reflashing The Current Flash Data For Another Request
+Session::reflash();
+
+// Reflashing Only A Subset Of Flash Data
+Session::keep(array('username', 'email'));</code></pre>
+<p>For more info on the Session API it's self see:
+<a href="http://laravel.com/docs/session" target="_blank">http://laravel.com/docs/session</a></p>
+<p><em>NOTE: While the Laravel Session API does provide support for many different
+drivers. This package only supports the database driver (for now).</em></p>
+<p><strong>WARINING: Do not use the built in native PHP session 
+functions and / or the global $_SESSION array</strong></p>
+<h2>Our Extra Method: hasExpired</h2>
+<p>To my current knowledge of Laravel, there is no built in way to work out if a
+Session has been set but then expired. So in a normal Laravel app if you wanted
+to display a "Your Session has expired!" message you would need to do some
+custom filters or something... see:</p>
+<p><a href="http://stackoverflow.com/questions/14688853/check-for-session-timeout-in-laravel" target="_blank">http://stackoverflow.com/questions/14688853/check-for-session-timeout-in-laravel</a></p>
+<p>But with <em>Gears\Session</em> just call:</p>
+<pre><code class="language-php">if (Session::hasExpired())
+{
+    echo 'Due to inactivity, your session has expired!';
+    echo 'Please &lt;a href="/login"&gt;click here&lt;/a&gt; to login again.';
+}</code></pre>
+<h2>So now for the why?</h2>
+<p>While laravel is so awesomely cool and great. If you want to pull a feature out
+and use it in another project it can become difficult. Firstly you have to have
+an innate understanding of the <a href="http://laravel.com/docs/ioc" target="_blank">IoC Container</a>.</p>
+<p>You then find that this class needs that class which then requires some other
+config variable that is normally present in the IoC when run inside a normal
+Laravel App but in your case you haven't defined it and don't really want
+to define that value because it makes no sense in your lets say <em>legacy</em>
+application.</p>
+<p>Perfect example is when I tried to pull the session API out to use in WordPress.
+It wanted to know about a <code>booted</code> method, which I think comes from
+<code>Illuminate\Foundation\Application</code>. At this point in time I already had to
+add various other things into the IoC to make it happy and it was the last straw
+that broke the camels back, I chucked a coders tantrum, walked to the fridge,
+grabbed another Redbull and sat back down with a new approach.</p>
+<p>The result is this project.</p>
+<hr />
+<p>Developed by Brad Jones - brad@bjc.id.au</p>
+				</div>
+			</div>
+
+		
+	</div>
+
+	<div class="col-md-2 toc">
+		<div class="list-group">
+							<a class="list-group-item active" data-block-target="#block_0">
+					The Session Gear
+				</a>
+					</div>
+	</div>
+
+
+			</div>
+		</div>
+
+		
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="searchModalLabel">
+					Search Results for: ...
+				</h3>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+		</div>
+	</div>
+</div>		
+		<script>
+			var relative_urls = {"di\/src\/Container.php":"..\/di\/src\/Container.html","di\/src\/ServiceProviderInterface.php":"..\/di\/src\/ServiceProviderInterface.html","di\/README.md":"..\/di\/README.html","session\/src\/Session.php":"src\/Session.html","session\/README.md":"#","string\/src\/Functions.php":"..\/string\/src\/Functions.html","string\/src\/String.php":"..\/string\/src\/String.html","string\/README.md":"..\/string\/README.html","arrays\/src\/Functions.php":"..\/arrays\/src\/Functions.html","arrays\/src\/Arrays\/Conversions\/From\/Table.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Table.html","arrays\/src\/Arrays\/Conversions\/From\/Json.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Json.html","arrays\/src\/Arrays\/Conversions\/From\/Xml.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Xml.html","arrays\/src\/Arrays\/Conversions\/From\/Csv.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Csv.html","arrays\/src\/Arrays\/Conversions\/From\/Lines.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Lines.html","arrays\/src\/Arrays\/Conversions\/From\/Dom.php":"..\/arrays\/src\/Arrays\/Conversions\/From\/Dom.html","arrays\/src\/Arrays\/Conversions\/To\/Table.php":"..\/arrays\/src\/Arrays\/Conversions\/To\/Table.html","arrays\/src\/Arrays\/Conversions\/To\/Json.php":"..\/arrays\/src\/Arrays\/Conversions\/To\/Json.html","arrays\/src\/Arrays\/Conversions\/To\/Xml.php":"..\/arrays\/src\/Arrays\/Conversions\/To\/Xml.html","arrays\/src\/Arrays\/Conversions\/To\/Csv.php":"..\/arrays\/src\/Arrays\/Conversions\/To\/Csv.html","arrays\/src\/Arrays\/Conversions\/Template.php":"..\/arrays\/src\/Arrays\/Conversions\/Template.html","arrays\/src\/Arrays\/Iterator.php":"..\/arrays\/src\/Arrays\/Iterator.html","arrays\/src\/Arrays\/Fluent.php":"..\/arrays\/src\/Arrays\/Fluent.html","arrays\/src\/Arrays.php":"..\/arrays\/src\/Arrays.html","arrays\/README.md":"..\/arrays\/README.html","doc\/src\/Console\/Application.php":"..\/doc\/src\/Console\/Application.html","doc\/src\/Console\/Commands\/Generate.php":"..\/doc\/src\/Console\/Commands\/Generate.html","doc\/src\/Generator.php":"..\/doc\/src\/Generator.html","doc\/src\/Views\/assets\/css\/main.css":"..\/doc\/src\/Views\/assets\/css\/main.html","doc\/src\/Views\/assets\/js\/main.js":"..\/doc\/src\/Views\/assets\/js\/main.html","doc\/README.md":"..\/doc\/README.html","router\/src\/Router.php":"..\/router\/src\/Router.html","router\/README.md":"..\/router\/README.html","view\/src\/View.php":"..\/view\/src\/View.html","view\/README.md":"..\/view\/README.html","1st Gear.md":"..\/1st Gear.html"};
+			var fancy_tree = [{"title":"di","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Container.php","active":false,"focus":false,"href":"..\/di\/src\/Container.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"ServiceProviderInterface.php","active":false,"focus":false,"href":"..\/di\/src\/ServiceProviderInterface.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/di\/README.html","icon":null}]},{"title":"session","folder":true,"expanded":true,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Session.php","active":false,"focus":false,"href":"src\/Session.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":true,"focus":true,"href":"#","icon":null}]},{"title":"string","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Functions.php","active":false,"focus":false,"href":"..\/string\/src\/Functions.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"String.php","active":false,"focus":false,"href":"..\/string\/src\/String.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/string\/README.html","icon":null}]},{"title":"arrays","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Arrays","folder":true,"expanded":false,"children":[{"title":"Conversions","folder":true,"expanded":false,"children":[{"title":"From","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Table.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Json.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Xml.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Csv.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Lines.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Lines.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Dom.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/From\/Dom.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"To","folder":true,"expanded":false,"children":[{"title":"Table.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/To\/Table.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Json.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/To\/Json.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Xml.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/To\/Xml.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Csv.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/To\/Csv.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Template.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Conversions\/Template.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Iterator.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Iterator.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Fluent.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays\/Fluent.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Functions.php","active":false,"focus":false,"href":"..\/arrays\/src\/Functions.html","icon":"..\/assets\/img\/silk\/page_white_php.png"},{"title":"Arrays.php","active":false,"focus":false,"href":"..\/arrays\/src\/Arrays.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/arrays\/README.html","icon":null}]},{"title":"doc","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Console","folder":true,"expanded":false,"children":[{"title":"Commands","folder":true,"expanded":false,"children":[{"title":"Generate.php","active":false,"focus":false,"href":"..\/doc\/src\/Console\/Commands\/Generate.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Application.php","active":false,"focus":false,"href":"..\/doc\/src\/Console\/Application.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"Views","folder":true,"expanded":false,"children":[{"title":"assets","folder":true,"expanded":false,"children":[{"title":"css","folder":true,"expanded":false,"children":[{"title":"main.css","active":false,"focus":false,"href":"..\/doc\/src\/Views\/assets\/css\/main.html","icon":"..\/assets\/img\/silk\/css.png"}]},{"title":"js","folder":true,"expanded":false,"children":[{"title":"main.js","active":false,"focus":false,"href":"..\/doc\/src\/Views\/assets\/js\/main.html","icon":"..\/assets\/img\/silk\/script_code.png"}]}]}]},{"title":"Generator.php","active":false,"focus":false,"href":"..\/doc\/src\/Generator.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/doc\/README.html","icon":null}]},{"title":"router","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"Router.php","active":false,"focus":false,"href":"..\/router\/src\/Router.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/router\/README.html","icon":null}]},{"title":"view","folder":true,"expanded":false,"children":[{"title":"src","folder":true,"expanded":false,"children":[{"title":"View.php","active":false,"focus":false,"href":"..\/view\/src\/View.html","icon":"..\/assets\/img\/silk\/page_white_php.png"}]},{"title":"README.md","active":false,"focus":false,"href":"..\/view\/README.html","icon":null}]},{"title":"1st Gear.md","active":false,"focus":false,"href":"..\/1st Gear.html","icon":null}];
+		</script>
+		<script src="../assets/script.js"></script>
+	</body>
+</html>
